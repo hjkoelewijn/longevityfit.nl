@@ -1447,8 +1447,9 @@ strong {
   margin: 0 15px;
 }
 
-/* Slottekst dunner + meer ruimte */
 .section__title--closing {
   margin-top: 40px;
-  font-weight: 400;
+  font-weight: 500; /* Iets dikker dan normaal (400), dunner dan bold (700) */
+  font-size: 1.5em; /* Groter dan normale tekst, kleiner dan header */
+}
 }
