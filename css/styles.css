@@ -1440,3 +1440,15 @@ strong {
     font-size: clamp(40px, 12vw, 64px);
   }
 }
+/* Logos groter */
+.partners-logos img {
+  height: 60px;
+  object-fit: contain;
+  margin: 0 15px;
+}
+
+/* Slottekst dunner + meer ruimte */
+.section__title--closing {
+  margin-top: 40px;
+  font-weight: 400;
+}
