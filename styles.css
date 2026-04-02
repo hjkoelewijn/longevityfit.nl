@@ -1494,3 +1494,143 @@ strong {
 .optin-embed {
   margin-bottom: 20px;
 }
+
+/* Enormail form styling (keeps embed functionality, matches brand look) */
+.optin-embed .c-enormail-webform {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
+  width: 100% !important;
+}
+
+.optin-embed .c-enormail-webform__fields__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  width: 100% !important;
+}
+
+.optin-embed .form-group {
+  margin: 0;
+}
+
+.optin-embed .c-enormail-webform__field,
+.optin-embed .form-control {
+  width: 100%;
+  min-height: 52px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.4;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 0;
+  box-sizing: border-box !important;
+  display: block !important;
+}
+
+.optin-embed .c-enormail-webform__field::placeholder,
+.optin-embed .form-control::placeholder {
+  color: var(--text-muted);
+}
+
+.optin-embed .c-enormail-webform__field:focus,
+.optin-embed .form-control:focus {
+  border-color: var(--btn);
+  box-shadow: 0 0 0 3px rgba(196, 154, 44, 0.15);
+}
+
+.optin-embed .c-enormail-webform__fields__grid--button {
+  margin-top: 12px;
+  width: 100% !important;
+}
+
+.optin-embed .c-enormail-webform__button,
+.optin-embed .btn.c-enormail-webform__button {
+  width: 100%;
+  border: none;
+  background: var(--btn);
+  color: var(--white);
+  padding: 16px 22px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  display: block !important;
+  box-sizing: border-box !important;
+  min-height: 52px;
+}
+
+.optin-embed .c-enormail-webform__button:hover,
+.optin-embed .btn.c-enormail-webform__button:hover {
+  background: var(--btn-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px var(--btn-glow);
+}
+
+.optin-privacy-note {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Hard overrides for embedded vendor defaults */
+.optin-embed form[name^="enormail-subscribe"] {
+  width: 100% !important;
+  max-width: 520px !important;
+  margin: 0 auto !important;
+}
+
+.optin-embed form[name^="enormail-subscribe"] .form-group {
+  width: 100% !important;
+}
+
+.optin-embed form[name^="enormail-subscribe"] input[type="text"],
+.optin-embed form[name^="enormail-subscribe"] input[type="email"] {
+  width: 100% !important;
+  font-size: 16px !important;
+  padding: 16px 20px !important;
+  height: auto !important;
+}
+
+.optin-embed form[name^="enormail-subscribe"] button[type="submit"] {
+  width: 100% !important;
+  font-size: 14px !important;
+  padding: 16px 22px !important;
+}
+
+/* Ensure Enormail submit always looks like branded button */
+.optin-embed form[name^="enormail-subscribe"] .c-enormail-webform__button,
+.optin-embed form[name^="enormail-subscribe"] button[type="submit"],
+.optin-embed form[name^="enormail-subscribe"] input[type="submit"] {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: var(--btn) !important;
+  color: var(--white) !important;
+  font-family: var(--font-body) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  display: block !important;
+  line-height: 1.2 !important;
+  min-height: 52px !important;
+}
+
+.optin-embed form[name^="enormail-subscribe"] .c-enormail-webform__button:hover,
+.optin-embed form[name^="enormail-subscribe"] button[type="submit"]:hover,
+.optin-embed form[name^="enormail-subscribe"] input[type="submit"]:hover {
+  background: var(--btn-hover) !important;
+}
