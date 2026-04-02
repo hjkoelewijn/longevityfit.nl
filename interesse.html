@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interesseformulier — Longevity Fit</title>
+  <meta name="description" content="Schrijf je in voor de interesselijst van Longevity Fit en ontvang als eerste updates over het programma en komende events.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="optin-page">
+  <nav class="nav nav--lancering" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="logo__longevity">LONGEVITY</span><span class="logo__fit">FIT</span>
+      </a>
+      <a href="#inschrijven" class="nav__cta">Interesse doorgeven</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section optin-hero">
+      <div class="container container--narrow">
+        <p class="section__label">Interesselijst</p>
+        <h1 class="section__title optin-hero__title">Welkom in de beste helft van je leven</h1>
+        <p class="optin-hero__sub">
+          Wil je als eerste horen wanneer deuren openen, events live gaan en nieuwe plekken beschikbaar zijn?
+          Laat je gegevens achter.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--cta" id="inschrijven">
+      <div class="container container--narrow">
+        <div class="cta-final">
+          <p class="cta-final__label">Longevity Fit updates</p>
+          <h2 class="cta-final__title">Interesseformulier</h2>
+          <p class="cta-final__sub">Je ontvangt alleen relevante updates. Uitschrijven kan altijd.</p>
+
+          <!--
+            ENORMAIL KOPPELING:
+            Plak hier de embed-code van Enormail (form script/iframe) ter vervanging van het fallback formulier.
+            Tot die tijd blijft dit nette fallback formulier zichtbaar.
+          -->
+          <div id="enormail-embed" class="optin-embed"></div>
+
+          <form class="mc-form" method="post" action="#">
+            <div class="mc-form__fields">
+              <input class="mc-form__input" type="text" name="name" placeholder="Voornaam" required>
+              <input class="mc-form__input" type="email" name="email" placeholder="E-mailadres" required>
+              <input class="mc-form__input" type="text" name="goal" placeholder="Waar wil je het liefst hulp bij? (optioneel)">
+              <button class="btn btn--primary mc-form__btn" type="submit">Ik heb interesse</button>
+            </div>
+            <p class="mc-form__note">Door te versturen ga je akkoord met het ontvangen van e-mails van Longevity Fit.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner footer__inner--standalone">
+        <span class="footer__brand footer__brand--plain">
+          <span class="logo__longevity">LONGEVITY</span><span class="logo__fit">FIT</span>
+        </span>
+        <p class="footer__copy">&copy; 2026 Longevity Fit. Alle rechten voorbehouden.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
