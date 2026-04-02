@@ -9,6 +9,45 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Hotfix: force Enormail form styling even when css cache is stale */
+    #enormail-embed .c-enormail-webform,
+    #enormail-embed form[name^="enormail-subscribe"] {
+      width: 100% !important;
+      max-width: 520px !important;
+      margin: 0 auto !important;
+    }
+    #enormail-embed .c-enormail-webform__fields__grid { display: grid !important; grid-template-columns: 1fr !important; gap: 12px !important; }
+    #enormail-embed .form-group { width: 100% !important; margin: 0 !important; }
+    #enormail-embed input[type="text"],
+    #enormail-embed input[type="email"] {
+      width: 100% !important;
+      min-height: 52px !important;
+      padding: 16px 20px !important;
+      font: 400 16px/1.4 Inter, sans-serif !important;
+      border: 1px solid #e5ded5 !important;
+      background: #fff !important;
+      color: #2a2520 !important;
+      box-sizing: border-box !important;
+      outline: none !important;
+    }
+    #enormail-embed .c-enormail-webform__fields__grid--button { margin-top: 12px !important; width: 100% !important; }
+    #enormail-embed button[type="submit"],
+    #enormail-embed input[type="submit"] {
+      width: 100% !important;
+      min-height: 52px !important;
+      padding: 16px 22px !important;
+      border: none !important;
+      background: #c49a2c !important;
+      color: #fff !important;
+      font: 600 14px/1.2 Inter, sans-serif !important;
+      text-transform: uppercase !important;
+      letter-spacing: .04em !important;
+      cursor: pointer !important;
+      display: block !important;
+      box-sizing: border-box !important;
+    }
+  </style>
 </head>
 <body class="optin-page">
   <nav class="nav nav--lancering" id="nav">
@@ -39,6 +78,11 @@
           <h2 class="cta-final__title">Interesseformulier</h2>
           <p class="cta-final__sub">Je ontvangt alleen relevante updates. Uitschrijven kan altijd.</p>
 
+          <!--
+            ENORMAIL KOPPELING:
+            Plak hier de embed-code van Enormail (form script/iframe) ter vervanging van het fallback formulier.
+            Tot die tijd blijft dit nette fallback formulier zichtbaar.
+          -->
           <div id="enormail-embed" class="optin-embed">
             <div class="c-enormail-webform c-enormail-webform--9b48ed0b19402096153eb6983b0df888">
               <form name="enormail-subscribe-9b48ed0b19402096153eb6983b0df888" action="https://app.enormail.eu/subscribe/9b48ed0b19402096153eb6983b0df888" method="post" id="enormail-subscribe-9b48ed0b19402096153eb6983b0df888">
