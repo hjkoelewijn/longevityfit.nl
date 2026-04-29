@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intake gesprek - Longevity Fit</title>
+  <meta name="description" content="Plan je Longevity Fit intake gesprek. We kwalificeren of het 8-weekse Reset programma past bij jouw doelen en commitment." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;1,400&family=Playfair+Display:ital,wght@0,400;1,400&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/longevity-site.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">LONGEVITY<span class="fit">FIT</span></a>
+      <nav class="site-nav" aria-label="Hoofdmenu">
+        <a href="index.html">Home</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="intake-gesprek.html" class="active">Intake gesprek</a>
+        <a href="#form" class="btn btn--primary">Plan je intake gesprek</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section section--gradient">
+      <div class="container">
+        <p class="hero__kicker">Intake gesprek</p>
+        <h1>Dit is geen gratis coachingsessie, maar een kwalificatiegesprek</h1>
+        <p class="lead muted">In dit gesprek bepalen we of jouw doelen, timing en commitment aansluiten op het 8-weekse Reset programma.</p>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="container grid-3">
+        <article class="card">
+          <h3>Wat gebeurt er?</h3>
+          <p>We maken je startsituatie scherp en kijken waar je nu energie verliest.</p>
+        </article>
+        <article class="card">
+          <h3>Voor wie?</h3>
+          <p>Voor 40+ vrouwen die verantwoordelijkheid nemen en bereid zijn om te investeren in verandering.</p>
+        </article>
+        <article class="card">
+          <h3>Wat verwacht je?</h3>
+          <p>Een direct gesprek van ongeveer 30 minuten met heldere vervolgstap als er een match is.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="form">
+      <div class="container">
+        <div class="form-wrap">
+          <h2>Vul je intake in</h2>
+          <p class="helper">Na verzenden sturen we je direct door naar de boekingspagina om je afspraakmoment te kiezen.</p>
+
+          <form id="intakeForm" data-booking-url="https://calendly.com/longevity-fit/1-1-afspraak-valerie" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="voornaam">Voornaam *</label>
+                <input id="voornaam" name="voornaam" type="text" required />
+              </div>
+              <div class="field">
+                <label for="achternaam">Achternaam *</label>
+                <input id="achternaam" name="achternaam" type="text" required />
+              </div>
+              <div class="field">
+                <label for="email">E-mailadres *</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+              <div class="field">
+                <label for="telefoon">Telefoonnummer *</label>
+                <input id="telefoon" name="telefoon" type="tel" required />
+              </div>
+              <div class="field">
+                <label for="leeftijd">Leeftijd *</label>
+                <select id="leeftijd" name="leeftijd" required>
+                  <option value="">Maak een keuze</option>
+                  <option>35-39</option>
+                  <option>40-45</option>
+                  <option>45-50</option>
+                  <option>50+</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="startmoment">Hoe snel wil je starten? *</label>
+                <select id="startmoment" name="startmoment" required>
+                  <option value="">Maak een keuze</option>
+                  <option>Zo snel mogelijk</option>
+                  <option>Binnen 1-2 maanden</option>
+                  <option>Later dit jaar</option>
+                  <option>Nog niet zeker</option>
+                </select>
+              </div>
+              <div class="field field--full">
+                <label for="uitdaging">Waar loop je nu tegenaan? (bijv. energie, focus, herstel, stress, grenzen aangeven) *</label>
+                <textarea id="uitdaging" name="uitdaging" required></textarea>
+              </div>
+              <div class="field field--full">
+                <label for="investeren">Ben je bereid om 8 weken in jezelf te investeren? *</label>
+                <select id="investeren" name="investeren" required>
+                  <option value="">Maak een keuze</option>
+                  <option>Ja</option>
+                  <option>Nee</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn--primary" type="submit">Naar afspraakplanner</button>
+              <a class="btn btn--outline" href="https://calendly.com/longevity-fit/1-1-afspraak-valerie" target="_blank" rel="noopener noreferrer">Open booking direct</a>
+            </div>
+            <p class="helper">Door te verzenden ga je akkoord met onze <a href="privacy-policy.html">privacy policy</a> en <a href="algemene-voorwaarden.html">algemene voorwaarden</a>.</p>
+            <div class="success" id="intakeSuccess">Top, je intake is ontvangen. We sturen je nu door naar de afspraakplanner...</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <a href="index.html" class="logo">LONGEVITY<span class="fit">FIT</span></a>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="algemene-voorwaarden.html">Algemene voorwaarden</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
