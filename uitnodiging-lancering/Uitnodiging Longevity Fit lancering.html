@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uitnodiging — Lancering Longevity Fit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --white: #ffffff;
+      --cream: #fdfbf7;
+      --text: #2a2520;
+      --text-medium: #5c524a;
+      --text-light: #8a7f75;
+      --accent: #c49a2c;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body: 'Cormorant Garamond', serif;
+    }
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--text-medium);
+      padding: 2rem;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .page {
+      width: 148mm;
+      height: 210mm;
+      margin: 0 auto 2rem;
+      background: var(--white);
+      box-shadow: 0 8px 40px rgba(42, 37, 32, 0.08);
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .page--back {
+      margin-bottom: 0;
+      width: 148mm;
+      height: 210mm;
+      min-height: 210mm;
+      padding: 8mm;
+      overflow: hidden;
+      display: block;
+    }
+    .page--back .back-content { height: 100%; overflow: hidden; }
+    /* Voorzijde: titel + foto + tekst */
+    .page__title {
+      font-family: var(--font-display);
+      font-size: 1.28rem;
+      letter-spacing: 0.1em;
+      color: var(--text);
+      padding: 5mm 8mm 3mm;
+      text-align: left;
+    }
+    .page__title span:first-child { color: var(--text); }
+    .page__title span:last-child { color: var(--accent); }
+    .page__photo-wrap {
+      width: 100%;
+      min-height: 70mm;
+      max-height: 95mm;
+      flex: 0 0 auto;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .page__photo {
+      width: 100%;
+      height: 100%;
+      max-height: 95mm;
+      object-fit: contain;
+      object-position: center center;
+      display: block;
+    }
+    .page__text {
+      flex: 1;
+      min-height: 0;
+      padding: 5mm 8mm 6mm;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      overflow: hidden;
+    }
+    .page__text h1 {
+      font-size: 2.12rem;
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+    .page__text .event-title { margin-bottom: 0.35rem; }
+    .page__text .tagline { margin-bottom: 0.45rem; font-size: 0.98rem; line-height: 1.42; }
+    .page__text .date-time-sub { margin-bottom: 0.45rem; }
+    .address-qr-row {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 5mm;
+      margin-top: auto;
+      padding-top: 3mm;
+      border-top: 1px solid rgba(196, 154, 44, 0.25);
+    }
+    .address-block {
+      flex: 1;
+      min-width: 0;
+      font-size: 0.98rem;
+      color: var(--text-medium);
+      line-height: 1.45;
+    }
+    .address-block p { margin-bottom: 0.15rem; }
+    .qr-wrap {
+      flex-shrink: 0;
+      width: 22mm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2mm;
+    }
+    .qr-wrap .qr-code {
+      width: 20mm;
+      height: 20mm;
+      display: block;
+    }
+    .page-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.5rem;
+    }
+    .logo span:first-child { color: var(--text); }
+    .logo span:last-child { color: var(--accent); }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .date-time {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+    .date-time-sub {
+      font-size: 0.98rem;
+      color: var(--text-medium);
+      margin-bottom: 1.35rem;
+    }
+    .event-title {
+      font-family: var(--font-display);
+      font-size: 1.52rem;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .tagline {
+      font-size: 1.02rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .tagline-sub {
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      margin-bottom: 1.5rem;
+    }
+    .location {
+      font-size: 0.95rem;
+      color: var(--text-medium);
+      margin-bottom: 1.75rem;
+      min-height: 2em;
+    }
+    .hero-image {
+      width: 100%;
+      height: 88mm;
+      object-fit: cover;
+      object-position: top center;
+      margin: -1.5rem -1.25rem 1rem -1.25rem;
+      display: block;
+    }
+    .btn-cta {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      background: var(--accent);
+      padding: 0.45rem 0.9rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    /* Button naast QR exact even breed als de QR-code */
+    .qr-wrap .btn-cta {
+      display: block;
+      width: 20mm;       /* exact breedte van QR */
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0;
+      white-space: normal;
+    }
+    .btn-cta:hover { background: #b08a22; }
+    .btn-placeholder {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 0.5rem;
+    }
+    .cta-block {
+      margin-top: 1rem;
+    }
+    .qr-code {
+      width: 20mm;
+      height: 20mm;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .back-intro {
+      font-size: 0.9rem;
+      color: var(--text);
+      margin: 0 0 0.52rem;
+      line-height: 1.42;
+    }
+    .back-quote {
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      font-style: italic;
+      margin-bottom: 0.6rem;
+      padding-left: 0.75rem;
+      border-left: 2px solid var(--accent);
+      line-height: 1.4;
+    }
+    .back-section-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      margin: 0.4rem 0 0.22rem;
+    }
+    .back-list {
+      list-style: none;
+      margin-bottom: 0.4rem;
+    }
+    .back-list li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.22rem;
+      font-size: 0.9rem;
+      line-height: 1.38;
+    }
+    .back-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .page--back .logo { margin-bottom: 0.5rem; font-size: 1.38rem; }
+    .voor-vrouwen {
+      font-size: 0.9rem;
+      color: var(--text);
+      margin: 0.4rem 0;
+      line-height: 1.4;
+    }
+    .voor-vrouwen strong { font-weight: 700; }
+    .spots {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 1.25rem 0 0.5rem;
+    }
+    .partners-logos {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.65rem;
+      margin: 0.3rem 0 0.85rem 0;
+    }
+    .partners-logos img {
+      max-height: 36px;
+      width: auto;
+      object-fit: contain;
+    }
+    .page--back .back-section-title.partners-follow { margin-top: 0.55rem; }
+    .page--back .qr-code { margin-top: 1.1rem; display: block; }
+    .cta-note {
+      font-size: 0.98rem;
+      color: var(--text-medium);
+      margin-top: 0.45rem;
+    }
+    .page__text .cta-note { margin-top: 0.35rem; }
+    .cta-note a { color: var(--accent); }
+    @media print {
+      @page { size: A5; margin: 0; }
+      body { padding: 0; background: white; }
+      .page {
+        width: 148mm;
+        height: 210mm;
+        max-width: none;
+        box-shadow: none;
+        border: none;
+        margin: 0;
+        padding: 0;
+        page-break-after: always;
+      }
+      .page--back { width: 148mm; height: 210mm; min-height: 210mm; page-break-after: auto; padding: 8mm; overflow: hidden; }
+      .page-label { display: none; }
+      .page__photo-wrap { min-height: 65mm; max-height: 90mm; }
+      .page__photo { object-fit: contain; max-height: 90mm; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- VOORZIJDE (A5 148×210mm) -->
+  <div class="page">
+    <p class="page__title"><span>LONGEVITY</span><span>FIT</span></p>
+    <div class="page__photo-wrap">
+      <img src="../images/uitnodiging.jpg" alt="Longevity Fit" class="page__photo">
+    </div>
+    <div class="page__text">
+      <h1>Welkom in de beste helft van je leven</h1>
+      <p class="date-time">9 april 2026</p>
+      <p class="date-time-sub">Inloop 19:15 uur | Start 19:30 uur</p>
+      <p class="event-title">Lancering Longevity Fit</p>
+      <p class="tagline">Het eerste longevityprogramma van Nederland voor 40+ vrouwen met weinig tijd, hoge standaarden en klaar om te doen wat nodig is.</p>
+      <div class="address-qr-row">
+        <div class="address-block">
+          <p>De Kooi</p>
+          <p>Zevenhuizerstraat 1</p>
+          <p>3751 LC Bunschoten - Spakenburg</p>
+        </div>
+        <div class="qr-wrap">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Flongevityfit.nl&color=000000&bgcolor=D4AF37" alt="" class="qr-code" role="img">
+        </div>
+      </div>
+      <p class="cta-note">Meld je aan via <a href="https://longevityfit.nl">https://longevityfit.nl</a></p>
+    </div>
+  </div>
+
+  <!-- ACHTERZIJDE (A5 148×210mm) -->
+  <div class="page page--back">
+    <div class="back-content">
+    <p class="logo"><span>LONGEVITY</span><span>FIT</span></p>
+    <p class="back-intro">Longevity gaat niet over zo oud mogelijk worden.<br>Het gaat over maximale verantwoordelijkheid nemen voor de jaren die je krijgt.</p>
+    <p class="back-intro">De meeste programma's vertellen je <strong>WÁT</strong> je moet doen.<br>Wij laten je voelen wat er gebeurt als je het daadwerkelijk <strong>DOET</strong>.</p>
+    <p class="back-intro">Zodat je leeft met power. Met lef. Met levenskracht.</p>
+    <p class="back-intro">Ben jij daar klaar voor? Kom dan op 9 april met ons de beste helft van je leven vieren!</p>
+    <p class="back-section-title">DEZE AVOND ONTDEK JE:</p>
+    <ul class="back-list">
+      <li>Waarom het idee dat het na je 40e alleen maar minder wordt, niet klopt</li>
+      <li>Waar vermoeidheid, verslapping en versnelde veroudering echt door komen</li>
+      <li>Waarom je lichaam niet het probleem is, maar de aanpak die je volgt</li>
+      <li>Wat er mogelijk wordt als je dat eenmaal snapt</li>
+    </ul>
+    <p class="back-section-title">EN VERDER:</p>
+    <ul class="back-list">
+      <li>Netwerk met toffe, gedreven vrouwen</li>
+      <li>Premium goodiebag + exclusief aanbod</li>
+    </ul>
+    <p class="back-section-title">LONGEVITY FIT PARTNERS</p>
+    <div class="partners-logos">
+      <img src="../images/logos-partners/LoisLee%20Logo%20fnl.jpg" alt="Lois Lee">
+      <img src="../images/logos-partners/BoucleStudio%20logo.jpg" alt="Bouclé Studio">
+      <img src="../images/logos-partners/Vlees%20van%20ons%20logo.jpg" alt="Vlees van ons">
+      <img src="../images/logos-partners/Astrid%26Therese%20logo.jpg" alt="Astrid &amp; Therese">
+    </div>
+    <p class="back-section-title partners-follow">VOOR VROUWEN DIE:</p>
+    <p class="voor-vrouwen">
+      Preventief willen optimaliseren.<br>
+      Niet wachten totdat het te laat is.<br>
+      <strong>Klaar zijn voor de beste helft van hun leven!</strong>
+    </p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Flongevityfit.nl&color=000000&bgcolor=D4AF37" alt="" class="qr-code" role="img">
+    <p class="cta-note">Meld je aan via <a href="https://longevityfit.nl">https://longevityfit.nl</a></p>
+    </div>
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Longevity Fit Transparante Logo's</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #d4af37;
+      --black: #000000;
+      --white: #ffffff;
+    }
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      font-family: "Work Sans", system-ui, sans-serif;
+    }
+    .canvas {
+      width: 2000px;
+      height: 700px;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 120px;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .logo {
+      font-size: 120px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 14px;
+      font-weight: 300;
+      white-space: nowrap;
+      background: transparent;
+    }
+    .logo .fit {
+      color: var(--gold);
+      font-weight: 600;
+      margin-left: -14px;
+    }
+    .logo.white { color: var(--white); }
+    .logo.black { color: var(--black); }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="logo white" data-logo="white">LONGEVITY<span class="fit">FIT</span></div>
+    <div class="logo black" data-logo="black">LONGEVITY<span class="fit">FIT</span></div>
+  </div>
+</body>
+</html>

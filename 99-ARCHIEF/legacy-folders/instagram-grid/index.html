@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Longevity Fit — Instagram grid (9×1080)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;1,300&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --peach: #ffecd2;
+      --coral: #fcb69f;
+      --gold: #d4af37;
+      --sand: #e8dcc8;
+      --charcoal: #2a2520;
+      --white: #ffffff;
+      --grad-photo: linear-gradient(
+        135deg,
+        rgba(255, 236, 210, 0.32) 0%,
+        rgba(252, 182, 159, 0.3) 50%,
+        rgba(232, 220, 200, 0.34) 100%
+      );
+      --grad-brand: linear-gradient(135deg, #fffbf6 0%, var(--peach) 38%, rgba(252, 182, 159, 0.55) 72%, var(--sand) 100%);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f0ebe4;
+      font-family: "Work Sans", system-ui, sans-serif;
+      color: var(--charcoal);
+    }
+
+    .stack {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding-bottom: 48px;
+    }
+
+    /* Each export slice */
+    .post {
+      position: relative;
+      width: 1080px;
+      height: 1080px;
+      overflow: hidden;
+      background: var(--sand);
+    }
+
+    .bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .overlay-photo {
+      position: absolute;
+      inset: 0;
+      background: var(--grad-photo);
+      pointer-events: none;
+    }
+
+    .overlay-soft {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.12) 0%,
+        rgba(232, 220, 200, 0.25) 100%
+      );
+      pointer-events: none;
+    }
+
+    .fill-brand {
+      position: absolute;
+      inset: 0;
+      background: var(--grad-brand);
+    }
+
+    .fill-brand-muted {
+      position: absolute;
+      inset: 0;
+      background: var(--grad-brand);
+      opacity: 0.94;
+    }
+
+    /* Logo — linksboven, 60px van rand */
+    .logo {
+      position: absolute;
+      top: 60px;
+      left: 60px;
+      z-index: 4;
+      font-family: "Work Sans", sans-serif;
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      line-height: 1;
+      color: var(--white);
+      text-shadow: 0 1px 2px rgba(42, 37, 32, 0.12);
+    }
+    .logo .fit {
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .logo.on-light {
+      color: var(--charcoal);
+      text-shadow: none;
+    }
+    .logo.on-light .fit {
+      color: var(--gold);
+    }
+
+    /* Quotes — Cormorant light italic */
+    .quote-wrap {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 100px 160px;
+      z-index: 2;
+    }
+    .quote {
+      font-family: "Cormorant", "Georgia", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 64px;
+      line-height: 1.22;
+      color: var(--charcoal);
+      text-align: center;
+      max-width: 920px;
+    }
+    .quote .accent {
+      color: var(--gold);
+      font-style: italic;
+    }
+    .cover-headline {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      padding: 140px 120px 170px;
+      text-align: center;
+      color: var(--charcoal);
+    }
+    .cover-headline h2 {
+      margin: 0;
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 76px;
+      line-height: 1.12;
+      color: #6b635a;
+    }
+    .cover-headline .title-muted {
+      color: #6b635a;
+    }
+    .cover-headline .title-longevity {
+      font-family: "Work Sans", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 76px;
+      letter-spacing: 0.02em;
+      text-transform: lowercase;
+      color: var(--charcoal);
+    }
+    .cover-headline .title-is {
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 76px;
+      color: #6b635a;
+    }
+    .cover-headline .versus {
+      display: block;
+      font-family: "Work Sans", sans-serif;
+      font-style: normal;
+      text-transform: uppercase;
+      font-size: 36px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: var(--charcoal);
+      margin: 28px 0 22px;
+      text-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(42, 37, 32, 0.08);
+    }
+    .cover-headline .title-close {
+      display: block;
+      margin-top: 6px;
+      color: #6b635a;
+    }
+
+    /* CTA block */
+    .cta-wrap {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 100px 180px;
+      z-index: 2;
+    }
+    .cta-kicker {
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      margin-bottom: 20px;
+      color: var(--charcoal);
+      opacity: 0.9;
+    }
+    .cta-title {
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 72px;
+      line-height: 1.1;
+      color: var(--charcoal);
+      margin-bottom: 36px;
+    }
+    .cta-title .accent {
+      color: var(--gold);
+    }
+    ul.cta-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    ul.cta-list li {
+      position: relative;
+      padding-left: 42px;
+      margin-bottom: 26px;
+      font-size: 23px;
+      line-height: 1.45;
+      font-weight: 400;
+      color: var(--charcoal);
+    }
+    ul.cta-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 32px;
+      line-height: 1.2;
+      color: var(--gold);
+    }
+
+    .caption-strip {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      bottom: 100px;
+      z-index: 3;
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 56px;
+      line-height: 1.2;
+      color: var(--white);
+      text-shadow: 0 2px 24px rgba(42, 37, 32, 0.25);
+    }
+    .caption-strip.on-light {
+      color: var(--charcoal);
+      text-shadow: none;
+    }
+
+    @media print {
+      .post { page-break-after: always; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stack">
+    <!-- 1. DNA / cellular -->
+    <section class="post" data-slot="1" data-theme="cover" aria-label="Post 1 cover longevity">
+      <div class="fill-brand"></div>
+      <p class="logo on-light" aria-hidden="true">LONGEVITY<span class="fit"> FIT</span></p>
+      <div class="cover-headline">
+        <h2>
+          <span class="title-muted">Wat je denkt dat</span><br />
+          <span class="title-longevity">longevity</span><span class="title-is"> is</span>
+          <span class="versus">versus</span>
+          <span class="title-close">wat het echt is</span>
+        </h2>
+      </div>
+    </section>
+
+    <!-- 2. Emotioneel / mens -->
+    <section class="post" data-slot="2" data-theme="emotion" aria-label="Post 2 emotioneel">
+      <div class="bg" style="background-image: url('../images/longevity-grid/IMG_3765_2-144bfe06-ec54-4e03-a6f0-0931be6db503.png');"></div>
+      <div class="overlay-photo"></div>
+      <p class="logo" aria-hidden="true">LONGEVITY<span class="fit"> FIT</span></p>
+    </section>
+
+    <!-- 3. Abstract premium -->
+    <section class="post" data-slot="3" data-theme="abstract" aria-label="Post 3 abstract">
+      <div class="bg" style="background-image: url('../images/longevity-grid/IMG_3747-0c93ff39-3a35-429f-b506-8d013064fd9a.png');"></div>
+      <div class="overlay-photo"></div>
+      <div class="overlay-soft"></div>
+      <p class="logo" aria-hidden="true">LONGEVITY<span class="fit"> FIT</span></p>
+    </section>
+
+    <!-- 4. Natuur / licht -->
+    <section class="post" data-slot="4" data-theme="nature" aria-label="Post 4 natuur licht">
+      <div class="bg" style="background-image: url('../images/longevity-grid/IMG_3766-984dafaf-4eea-45e8-8e99-0940d7e1f42e.png');"></div>
+      <div class="overlay-photo"></div>
+      <p class="logo" aria-hidden="true">LONGEVITY<span class="fit"> FIT</span></p>
+      <p class="caption-strip">Well-aging begint waar jij weer ruimte maakt voor licht.</p>
+    </section>
+
+    <!-- 5. Quote / kernboodschap -->
+    <section class="post" data-slot="5" data-theme="quote" aria-label="Post 5 quote">
+      <div class="fill-brand"></div>
+      <p class="logo on-light" aria-hidden="true">LONGEVITY<span class="fit"> FIT</span></p>
+      <div class="quote-wrap">
+        <p class="quote">
+          Longevity gaat niet over zo oud mogelijk worden. Het gaat over
+          <span class="accent">maximale verantwoordelijkheid</span> nemen voor de jaren die je krijgt.
+        </p>
+      </div>
+    </section>
+
+    <!-- 6. DNA / cellular -->
+    <section class="post" data-slot="6" data-theme="dna" aria-label="Post 6 DNA cellular">
+      <div class="bg" style="background-image: url('../images/longevity-grid/IMG_3764-4ed60966-76c1-401b-ab5e-fc3b765dd2d9.png');"></div>
+      <div class="overlay-photo"></div>
+      <div class="overlay-soft"></div>
+      <p class="logo" aria-hidden="true">LONGEVITY<span class="fit"> FIT</span></p>
+    </section>
+
+    <!-- 7. Emotioneel (tweede slot — eigen foto aan te passen) -->
+    <section class="post" data-slot="7" data-theme="emotion" aria-label="Post 7 emotioneel">
+      <div class="bg" style="background-image: url('../images/longevity-grid/IMG_3759_2-581fa71f-1b91-4fd7-9c29-61d918343c59.png');"></div>
+      <div class="overlay-photo"></div>
+      <p class="logo" aria-hidden="true">LONGEVITY<span class="fit"> FIT</span></p>
+      <p class="caption-strip" style="bottom: 120px;">Krachtig. Warm. Wetenschappelijk onderbouwd.</p>
+    </section>
+
+    <!-- 8. Abstract premium -->
+    <section class="post" data-slot="8" data-theme="abstract" aria-label="Post 8 abstract">
+      <div class="bg" style="background-image: url('../images/longevity-grid/IMG_3751-9a3ac5f0-763a-4361-8a56-dd8cfd0a019b.png');"></div>
+      <div class="overlay-photo"></div>
+      <div class="overlay-soft"></div>
+      <p class="logo" aria-hidden="true">LONGEVITY<span class="fit"> FIT</span></p>
+    </section>
+
+    <!-- 9. CTA / programma -->
+    <section class="post" data-slot="9" data-theme="cta" aria-label="Post 9 CTA">
+      <div class="fill-brand-muted"></div>
+      <p class="logo on-light" aria-hidden="true">LONGEVITY<span class="fit"> FIT</span></p>
+      <div class="cta-wrap">
+        <p class="cta-kicker">Voor vrouwen 40+ die een keerpunt zoeken</p>
+        <h2 class="cta-title">Transformatie via <span class="accent">longevity</span>, fitness &amp; mindset</h2>
+        <ul class="cta-list">
+          <li>Training die past bij jouw lichaam — functional movement, well-aging</li>
+          <li>Celgezondheid en wetenschappelijk onderbouwde aanpak</li>
+          <li>Coaching die scherp is én menselijk blijft</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

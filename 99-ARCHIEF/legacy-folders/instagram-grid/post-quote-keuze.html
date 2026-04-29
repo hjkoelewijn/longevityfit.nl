@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Longevity Fit — Quote Post Keuze</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;1,300&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --peach: #ffecd2;
+      --coral: #fcb69f;
+      --gold: #d4af37;
+      --sand: #e8dcc8;
+      --charcoal: #2a2520;
+      --grad-brand: linear-gradient(135deg, #fffbf6 0%, var(--peach) 38%, rgba(252, 182, 159, 0.55) 72%, var(--sand) 100%);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f0ebe4;
+      font-family: "Work Sans", system-ui, sans-serif;
+      color: var(--charcoal);
+    }
+    .post {
+      position: relative;
+      width: 1080px;
+      height: 1080px;
+      margin: 0 auto;
+      overflow: hidden;
+      background: var(--grad-brand);
+    }
+    .content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 150px 110px;
+      text-align: center;
+    }
+    .kicker {
+      margin: 0 0 28px;
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6b635a;
+    }
+    h1 {
+      margin: 0;
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 88px;
+      line-height: 1.12;
+      color: var(--charcoal);
+      max-width: 900px;
+    }
+    .accent {
+      color: var(--gold);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45), 0 2px 14px rgba(212, 175, 55, 0.25);
+    }
+  </style>
+</head>
+<body>
+  <section class="post" aria-label="Quote post De beste helft van je leven">
+    <div class="content">
+      <p class="kicker">Longevity Fit</p>
+      <h1>De beste helft van je leven?<br /><span class="accent">Die begint met een keuze.</span></h1>
+    </div>
+  </section>
+</body>
+</html>

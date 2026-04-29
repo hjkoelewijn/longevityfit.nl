@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "scripts": {
+    "export:instagram-grid": "node scripts/export-instagram-grid.mjs",
+    "export:carrousel-post-1": "node scripts/export-carrousel-post-1.mjs",
+    "export:post-zijaanzicht": "node scripts/export-post-zijaanzicht.mjs",
+    "export:post-quote-keuze": "node scripts/export-post-quote-keuze.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.58.2"
+  }
+}

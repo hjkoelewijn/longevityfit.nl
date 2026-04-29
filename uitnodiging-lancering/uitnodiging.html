@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uitnodiging — Lancering Longevity Fit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --white: #ffffff;
+      --cream: #fdfbf7;
+      --text: #2a2520;
+      --text-medium: #5c524a;
+      --text-light: #8a7f75;
+      --accent: #c49a2c;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--text-medium);
+      padding: 2rem;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .page {
+      width: 148mm;
+      min-height: 210mm;
+      margin: 0 auto 2rem;
+      background: var(--white);
+      box-shadow: 0 8px 40px rgba(42, 37, 32, 0.08);
+      padding: 1.5rem 1.25rem;
+    }
+    .page--back { margin-bottom: 0; }
+    .page-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.5rem;
+    }
+    .logo span:first-child { color: var(--text); }
+    .logo span:last-child { color: var(--accent); }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .date-time {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+    .date-time-sub {
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      margin-bottom: 1.5rem;
+    }
+    .event-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .tagline {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .tagline-sub {
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      margin-bottom: 1.5rem;
+    }
+    .location {
+      font-size: 0.95rem;
+      color: var(--text-medium);
+      margin-bottom: 1.75rem;
+      min-height: 2em;
+    }
+    .location.placeholder { color: var(--text-light); font-style: italic; }
+    .hero-image {
+      width: 100%;
+      height: 88mm; /* gezichten, haar, jasjes, handen zichtbaar */
+      object-fit: cover;
+      object-position: bottom center; /* onderkant bronfoto = jullie gezichten; die komen bovenaan in beeld */
+      margin: -1.5rem -1.25rem 1rem -1.25rem; /* full-bleed bovenkant */
+      display: block;
+    }
+    .btn-cta {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      background: var(--accent);
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      margin-top: 0.5rem;
+    }
+    .btn-cta:hover { background: #b08a22; }
+    .btn-placeholder {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 0.5rem;
+    }
+    /* --- Achterzijde --- */
+    .back-intro {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .back-quote {
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      font-style: italic;
+      margin-bottom: 1.25rem;
+      padding-left: 1rem;
+      border-left: 3px solid var(--accent);
+    }
+    .back-section-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      margin: 1.25rem 0 0.75rem;
+    }
+    .back-list {
+      list-style: none;
+      margin-bottom: 1rem;
+    }
+    .back-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .back-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .partners-placeholder,
+    .partners-text {
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      margin: 0.5rem 0 1rem;
+    }
+    .partners-placeholder { font-style: italic; color: var(--text-light); }
+    .voor-vrouwen {
+      font-size: 0.9rem;
+      color: var(--text);
+      margin: 1rem 0;
+    }
+    .voor-vrouwen strong { display: block; margin-bottom: 0.35rem; }
+    .spots {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 1.25rem 0 0.5rem;
+    }
+    @media print {
+      @page { size: A5; margin: 0; }
+      body { padding: 0; background: white; }
+      .page {
+        width: 148mm;
+        min-height: 210mm;
+        max-width: none;
+        box-shadow: none;
+        border: none;
+        margin: 0;
+        padding: 1.5rem 1.25rem;
+        page-break-after: always;
+      }
+      .page--back { page-break-after: auto; }
+      .page-label { display: none; }
+      .hero-image {
+        margin: -1.5rem -1.25rem 1rem -1.25rem;
+        height: 88mm;
+        object-position: bottom center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- VOORZIJDE -->
+  <div class="page">
+    <p class="page-label">Voorzijde</p>
+    <img src="../images/hero.jpg" alt="Longevity Fit" class="hero-image">
+    <p class="logo"><span>LONGEVITY</span><span>FIT</span></p>
+    <h1>Welkom in de beste helft van je leven</h1>
+    <p class="date-time">9 april 2026</p>
+    <p class="date-time-sub">Inloop 19:15 uur | Start 19:30 uur</p>
+    <p class="event-title">Lancering Longevity Fit</p>
+    <p class="tagline">Het eerste longevity programma van Nederland voor 40+ vrouwen met weinig tijd.</p>
+    <p class="tagline-sub">En klaar om te doen wat nodig is.</p>
+    <p class="location">De Kooi<br>Zevenhuizerstraat 1<br>3751 LC Bunschoten - Spakenburg</p>
+    <p class="btn-placeholder">[QR-code of button: Meld je gratis aan]</p>
+    <a href="#" class="btn-cta">Meld je gratis aan</a>
+  </div>
+
+  <!-- ACHTERZIJDE -->
+  <div class="page page--back">
+    <p class="page-label">Achterzijde</p>
+    <p class="logo"><span>LONGEVITY</span><span>FIT</span></p>
+    <p class="back-intro">Longevity gaat niet over zo oud mogelijk worden. Je weet niet hoeveel jaren je krijgt. Het gaat om maximale verantwoordelijkheid nemen voor wat binnen jouw invloedsfeer ligt.</p>
+    <p class="back-intro">Zodat je leeft met power. Met lef. Met levenslust.</p>
+    <p class="back-quote">Longevity gaat niet over terug naar je 25e, wel over krachtiger vooruit!</p>
+    <p class="back-intro">Ben jij daar klaar voor?</p>
+    <p class="back-intro">Kom dan op 9 april met ons de beste helft van je leven vieren!</p>
+    <p class="back-section-title">Deze avond ontdek je de waarheid die niemand je vertelt:</p>
+    <ul class="back-list">
+      <li>Waar vermoeidheid, versnelde veroudering en verslapping door komen.</li>
+      <li>Waarom de gangbare aanpak je uitput in plaats van opbouwt.</li>
+      <li>Waarom alles wat werkt tot je 40e, tegen je werkt na je 40e.</li>
+    </ul>
+    <p class="back-section-title">En verder:</p>
+    <ul class="back-list">
+      <li>Netwerk met toffe, gedreven vrouwen.</li>
+      <li>Premium goodiebag + exclusief aanbod.</li>
+    </ul>
+    <p class="back-section-title">LONGEVITY FIT PARTNERS</p>
+    <p class="partners-text">Lois Lee | Bouclé Studio | Vlees van ons</p>
+    <p class="back-section-title">Longevity Fit is er voor vrouwen die:</p>
+    <p class="voor-vrouwen">
+      Preventief willen optimaliseren.<br>
+      Niet wachten totdat het te laat is.<br>
+      Klaar zijn voor de beste helft van hun leven.
+    </p>
+    <p class="spots">Plek voor 100 vrouwen. Inschrijven verplicht.</p>
+    <p class="btn-placeholder">[QR-code of button: SCHRIJF JE IN]</p>
+    <a href="#" class="btn-cta">Schrijf je in</a>
+  </div>
+
+</body>
+</html>

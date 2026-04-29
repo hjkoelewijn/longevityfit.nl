@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Longevity Fit — Carrousel Post 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,600;1,300;1,600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --peach: #ffecd2;
+      --coral: #fcb69f;
+      --gold: #d4af37;
+      --sand: #e8dcc8;
+      --charcoal: #2a2520;
+      --white: #ffffff;
+      --grad-brand: linear-gradient(135deg, #fffbf6 0%, var(--peach) 38%, rgba(252, 182, 159, 0.55) 72%, var(--sand) 100%);
+      /* Slide 3: licht, geen donkere tinten */
+      --grad-brand-quote: linear-gradient(135deg, #ffffff 0%, #fffbf6 40%, var(--peach) 100%);
+      --grad-photo: linear-gradient(135deg, rgba(255, 236, 210, 0.28) 0%, rgba(252, 182, 159, 0.24) 50%, rgba(232, 220, 200, 0.3) 100%);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f0ebe4;
+      color: var(--charcoal);
+      font-family: "Work Sans", system-ui, sans-serif;
+    }
+
+    .stack {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding-bottom: 40px;
+    }
+
+    .slide {
+      position: relative;
+      width: 1080px;
+      height: 1080px;
+      overflow: hidden;
+      background: var(--sand);
+    }
+
+    .logo {
+      position: absolute;
+      top: 60px;
+      left: 60px;
+      z-index: 5;
+      font-family: "Work Sans", sans-serif;
+      font-size: 30px;
+      font-weight: 300;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      line-height: 1;
+      color: var(--white);
+    }
+    .logo .fit {
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .logo.on-light { color: var(--charcoal); }
+
+    .bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+    }
+    .overlay-photo {
+      position: absolute;
+      inset: 0;
+      background: var(--grad-photo);
+    }
+    .overlay-quote {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 236, 210, 0.34) 0%, rgba(252, 182, 159, 0.3) 45%, rgba(232, 220, 200, 0.42) 100%);
+      mix-blend-mode: screen;
+    }
+
+    .title-wrap {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 120px 160px;
+      z-index: 2;
+    }
+    .title {
+      text-align: center;
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 76px;
+      line-height: 1.12;
+      color: #6b635a;
+    }
+    .title .title-muted {
+      color: #6b635a;
+    }
+    .title .title-longevity {
+      font-family: "Work Sans", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 76px;
+      letter-spacing: 0.02em;
+      text-transform: lowercase;
+      color: var(--charcoal);
+    }
+    .title .title-is {
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 76px;
+      color: #6b635a;
+    }
+    .title .versus {
+      font-family: "Work Sans", sans-serif;
+      font-size: 36px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 28px 0 22px;
+      display: block;
+      color: var(--charcoal);
+      text-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(42, 37, 32, 0.08);
+    }
+    .title .title-close {
+      display: block;
+      margin-top: 6px;
+      color: #6b635a;
+    }
+
+    .content-wrap {
+      position: absolute;
+      inset: 0;
+      padding: 190px 95px 120px;
+      color: var(--white);
+      z-index: 2;
+    }
+    .content-wrap.light {
+      color: var(--charcoal);
+    }
+    .content-wrap.slide2-centered {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-left: 72px;
+      padding-right: 72px;
+    }
+    .content-wrap.slide2-centered .content-title {
+      text-align: center;
+      max-width: 920px;
+    }
+    .content-wrap.slide2-centered ul.bullets {
+      max-width: 940px;
+      margin: 0 auto;
+    }
+    .content-wrap.slide2-centered ul.bullets li {
+      text-align: center;
+      padding-left: 0;
+      font-size: 28px;
+      line-height: 1.42;
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+    .content-wrap.slide2-centered ul.bullets li::before {
+      position: static;
+      display: inline;
+      margin-right: 0.45em;
+      vertical-align: 0.08em;
+      font-size: 36px;
+    }
+    /* Slide 4: zwarte tekst (titel + bullets) */
+    .content-wrap.slide-text-black,
+    .content-wrap.slide-text-black .content-title,
+    .content-wrap.slide-text-black .content-title .accent {
+      color: #000000;
+    }
+    .content-wrap.slide-text-black ul.bullets li {
+      color: #000000;
+    }
+    .content-wrap.slide-text-black ul.bullets li::before {
+      color: var(--gold);
+    }
+    .overlay-christina {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(255, 251, 246, 0.92) 0%,
+        rgba(255, 251, 246, 0.55) 42%,
+        rgba(255, 236, 210, 0.22) 100%
+      );
+    }
+    .content-title {
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 70px;
+      line-height: 1.05;
+      margin: 0 0 40px;
+    }
+    .content-title .accent {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    ul.bullets {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    ul.bullets li {
+      position: relative;
+      margin-bottom: 26px;
+      padding-left: 44px;
+      font-size: 23px;
+      line-height: 1.45;
+      font-weight: 400;
+      max-width: 860px;
+    }
+    ul.bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: -1px;
+      color: var(--gold);
+      font-size: 32px;
+      line-height: 1.1;
+    }
+
+    .quote-wrap {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 180px 130px 160px;
+      text-align: center;
+      z-index: 2;
+    }
+    .quote {
+      margin: 0;
+      color: #000000;
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 64px;
+      line-height: 1.22;
+    }
+    /* Op de quote-slide: kernzin in merkgoud, extra leesbaar op lichte achtergrond */
+    .quote .accent {
+      color: var(--gold);
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.08em;
+      letter-spacing: 0.015em;
+      text-shadow:
+        0 0 1px rgba(255, 255, 255, 0.9),
+        0 1px 0 rgba(255, 255, 255, 0.35),
+        0 2px 12px rgba(212, 175, 55, 0.35);
+    }
+
+    .launch-wrap {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 160px 100px;
+      text-align: center;
+      z-index: 2;
+    }
+    .launch-kicker {
+      font-family: "Work Sans", sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+    .launch-date {
+      font-family: "Work Sans", sans-serif;
+      font-size: 32px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--charcoal);
+      margin: 0 0 32px;
+    }
+    .launch-line {
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 68px;
+      line-height: 1.2;
+      color: var(--charcoal);
+      max-width: 920px;
+      margin: 0;
+    }
+
+    @media print {
+      .slide { page-break-after: always; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stack">
+    <section class="slide" data-slide="1">
+      <div class="bg" style="background: var(--grad-brand);"></div>
+      <p class="logo on-light">LONGEVITY<span class="fit"> FIT</span></p>
+      <div class="title-wrap">
+        <h1 class="title">
+          <span class="title-muted">Wat je denkt dat</span><br />
+          <span class="title-longevity">longevity</span><span class="title-is"> is</span>
+          <span class="versus">versus</span>
+          <span class="title-close">wat het echt is</span>
+        </h1>
+      </div>
+    </section>
+
+    <section class="slide" data-slide="2">
+      <div class="bg" style="background-image: url('../images/longevity-grid/LR_1e_set_Summershoot-1-9ccdd830-a0ac-479d-a1ef-a4355f42f50d.png');"></div>
+      <div class="overlay-christina"></div>
+      <p class="logo on-light">LONGEVITY<span class="fit"> FIT</span></p>
+      <div class="content-wrap light slide2-centered">
+        <h2 class="content-title">Hoe je mogelijk<br />naar longevity kijkt:</h2>
+        <ul class="bullets">
+          <li>Ouder worden zonder een rimpel</li>
+          <li>Denken dat alles genetisch bepaald is</li>
+          <li>Je lichaam pushen met intensieve workouts, elke dag</li>
+          <li>Nooit moe zijn, nooit stress voelen</li>
+          <li>Extreme diëten om slank te blijven</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide" data-slide="3">
+      <div class="bg" style="background: var(--grad-brand-quote);"></div>
+      <p class="logo on-light">LONGEVITY<span class="fit"> FIT</span></p>
+      <div class="quote-wrap">
+        <p class="quote">
+          Longevity gaat niet over<br />
+          zo oud mogelijk worden.<br /><br />
+          Het gaat over <span class="accent">maximale verantwoordelijkheid</span> nemen<br />
+          voor de jaren die je krijgt.
+        </p>
+      </div>
+    </section>
+
+    <section class="slide" data-slide="4">
+      <div class="bg" style="background-image: url('../images/longevity-grid/IMG_3751-9a3ac5f0-763a-4361-8a56-dd8cfd0a019b.png'); background-size: cover; background-position: center center;"></div>
+      <div class="overlay-christina"></div>
+      <p class="logo on-light">LONGEVITY<span class="fit"> FIT</span></p>
+      <div class="content-wrap light slide2-centered slide-text-black">
+        <h2 class="content-title">Wat longevity<br /><span class="accent">echt is:</span></h2>
+        <ul class="bullets">
+          <li>Je lichaam voeden met volwaardige voeding en verandering omarmen</li>
+          <li>Celgezondheid ondersteunen met wetenschappelijk onderbouwde voedingsstoffen</li>
+          <li>Stress managen op een manier die bij jou werkt</li>
+          <li>Trainen op een manier die past bij jouw 40+ lichaam en op basis van jouw metingen</li>
+          <li>Weten wat je lichaam nodig heeft via objectieve metingen</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide" data-slide="5">
+      <div class="bg" style="background: var(--grad-brand);"></div>
+      <p class="logo on-light">LONGEVITY<span class="fit"> FIT</span></p>
+      <div class="launch-wrap">
+        <p class="launch-kicker">Morgen de lancering</p>
+        <p class="launch-date">9 april 2026</p>
+        <p class="launch-line">Kom je de beste helft van je leven met ons vieren?</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

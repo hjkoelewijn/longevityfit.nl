@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Longevity Fit Spreekslide Achtergrond</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --peach: #ffecd2;
+      --coral: #fcb69f;
+      --sand: #e8dcc8;
+      --gold: #d4af37;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f2ece3;
+      font-family: "Work Sans", system-ui, sans-serif;
+    }
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--peach) 0%, var(--coral) 50%, var(--sand) 100%);
+      isolation: isolate;
+    }
+    .light {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0) 36%),
+        radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 32%),
+        radial-gradient(circle at 78% 82%, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 30%);
+      z-index: 1;
+    }
+    .logo {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 4;
+      font-size: 120px;
+      font-weight: 300;
+      letter-spacing: 14px;
+      text-transform: uppercase;
+      line-height: 1;
+      color: #000000;
+      text-shadow: 0 2px 18px rgba(255, 255, 255, 0.28);
+    }
+    .logo .fit {
+      color: var(--gold);
+      font-weight: 600;
+      margin-left: -14px;
+    }
+  </style>
+</head>
+<body>
+  <section class="slide" aria-label="Longevity Fit achtergrond voor presentatie">
+    <div class="light"></div>
+    <p class="logo">LONGEVITY<span class="fit">FIT</span></p>
+  </section>
+</body>
+</html>
