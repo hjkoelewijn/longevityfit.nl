@@ -126,6 +126,11 @@
         return;
       }
 
+      // Meta Pixel: registreer een Lead conversie bij geldige inzending
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', { content_name: 'Intake gesprek' });
+      }
+
       if (success) {
         success.style.display = 'block';
       }
