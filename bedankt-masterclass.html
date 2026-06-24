@@ -52,7 +52,16 @@
         <div class="hero__split">
           <div class="hero__text">
             <p class="hero__kicker">De Longevity Masterclass</p>
-            <h1>Goed dat je erbij bent.</h1>
+            <h1 id="bedankt-headline">Goed dat je erbij bent.</h1>
+            <script>
+              (function () {
+                var naam = new URLSearchParams(window.location.search).get('naam');
+                if (naam) {
+                  document.getElementById('bedankt-headline').textContent =
+                    'Goed dat je erbij bent, ' + naam.trim() + '.';
+                }
+              })();
+            </script>
             <p class="lead muted">Je inschrijving is bevestigd. Je ontvangt een bevestigingsmail met alle details.</p>
             <p class="lead muted">Tot dan, zorg goed voor jezelf.</p>
             <p class="lead" style="margin-top: 8px;">Heidy &amp; Christina</p>
