@@ -27,66 +27,63 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html, body {
-      min-height: 100%;
-    }
-
     body {
       background: #faf7f2;
       font-family: "Work Sans", sans-serif;
       color: #2a2520;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 24px 16px 48px;
     }
 
-    .logo {
+    /* ---- HERO FOTO: full width ---- */
+    .hero {
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    /* ---- LOGO BAR ---- */
+    .logo-bar {
+      text-align: center;
+      padding: 28px 16px 0;
       font-size: 17px;
       letter-spacing: 7px;
       text-transform: uppercase;
       color: #2a2520;
-      text-decoration: none;
-      margin-bottom: 28px;
-      display: block;
     }
-    .logo .fit { color: #d4af37; font-weight: 600; }
+    .logo-bar .fit { color: #d4af37; font-weight: 600; }
 
-    .photo {
-      width: 100%;
-      max-width: 420px;
-      height: 260px;
-      overflow: hidden;
-      border-radius: 16px;
-      margin-bottom: 20px;
-    }
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 75%;
-      display: block;
-    }
-
+    /* ---- WIDGET: gecentreerd, ruimer op desktop ---- */
     .widget-wrap {
-      width: 100%;
-      max-width: 420px;
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
     }
 
-    @media (min-width: 600px) {
-      .photo {
-        height: 320px;
+    /* ---- MOBIEL ---- */
+    @media (max-width: 600px) {
+      .hero {
+        height: 260px;
+      }
+      .widget-wrap {
+        max-width: 100%;
+        padding: 24px 16px 48px;
       }
     }
   </style>
 </head>
 <body>
 
-  <a class="logo" href="index.html">LONGEVITY<span class="fit">FIT</span></a>
-
-  <div class="photo">
-    <img src="images/hero.jpg" alt="Heidy &amp; Christina — LONGEVITYFIT" />
+  <div class="hero">
+    <img src="images/masterclass/1.png" alt="Heidy &amp; Christina — LONGEVITYFIT" />
   </div>
+
+  <div class="logo-bar">LONGEVITY<span class="fit">FIT</span></div>
 
   <div class="widget-wrap">
     <div id="mw_wmvFJc4kBE6_webinargeek"></div>
