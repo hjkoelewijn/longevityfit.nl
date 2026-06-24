@@ -23,109 +23,61 @@
   <title>De Longevity Masterclass — LONGEVITYFIT</title>
   <meta name="description" content="Meld je aan voor De Longevity Masterclass van LONGEVITYFIT." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      min-height: 100%;
+    }
+
     body {
       background: #faf7f2;
       font-family: "Work Sans", sans-serif;
       color: #2a2520;
-    }
-    img { display: block; width: 100%; }
-
-    .page {
-      min-height: 100dvh;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      padding: 24px 16px 48px;
     }
 
-    /* Logo */
-    .logo-bar {
-      text-align: center;
-      padding: 18px 16px 12px;
-      font-size: 18px;
+    .logo {
+      font-size: 17px;
       letter-spacing: 7px;
       text-transform: uppercase;
-      flex-shrink: 0;
+      color: #2a2520;
+      text-decoration: none;
+      margin-bottom: 28px;
+      display: block;
     }
-    .logo-bar .fit { color: #d4af37; font-weight: 600; }
+    .logo .fit { color: #d4af37; font-weight: 600; }
 
-    /* Photo */
-    .photo {
-      width: 100%;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    .photo img {
-      height: 340px;
-      object-fit: cover;
-      object-position: center 80%;
-    }
-
-    /* Widget */
     .widget-wrap {
-      flex: 1;
-      padding: 32px 20px 40px;
-      max-width: 560px;
       width: 100%;
-      margin: 0 auto;
-    }
-
-    /* Desktop: photo left, widget right */
-    @media (min-width: 768px) {
-      .page {
-        flex-direction: column;
-      }
-      .main-split {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        flex: 1;
-        min-height: 0;
-      }
-      .photo {
-        height: 100%;
-      }
-      .photo img {
-        height: 100%;
-        min-height: 400px;
-        object-position: center 75%;
-      }
-      .widget-wrap {
-        padding: 40px 40px;
-        max-width: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
+      max-width: 420px;
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <div class="logo-bar">LONGEVITY<span class="fit">FIT</span></div>
 
-    <div class="main-split">
-      <div class="photo">
-        <img src="images/hero.jpg" alt="Heidy &amp; Christina — De Longevity Masterclass" />
-      </div>
-      <div class="widget-wrap">
-        <div id="mw_wmvFJc4kBE6_webinargeek"></div>
-        <script>
-          (function(w,d,stn,sa,gn,se,fse){w[gn]=w[gn]||function(){(w[gn].q = w[gn].q||[]).push(arguments)};
-          se=d.createElement(stn);fse=d.getElementsByTagName(stn)[0];se.id=gn;se.async=1;
-          se.src=sa+"?t="+new Date().toISOString().slice(0, -9);fse.parentNode.insertBefore(se, fse);
-          })(window, document, "script", "https://malong.webinargeek.com/malong.embed.js", "mw_wmvFJc4kBE6");
-          mw_wmvFJc4kBE6("init", {
-            project: "registration",
-            identifier: "897c274e-ef58-4fea-868d-f37e39d74c8b",
-            shape: "inline",
-            theme: "light",
-            disablePagination: true
-          });
-        </script>
-      </div>
-    </div>
+  <a class="logo" href="index.html">LONGEVITY<span class="fit">FIT</span></a>
+
+  <div class="widget-wrap">
+    <div id="mw_wmvFJc4kBE6_webinargeek"></div>
+    <script>
+      (function(w,d,stn,sa,gn,se,fse){w[gn]=w[gn]||function(){(w[gn].q = w[gn].q||[]).push(arguments)};
+      se=d.createElement(stn);fse=d.getElementsByTagName(stn)[0];se.id=gn;se.async=1;
+      se.src=sa+"?t="+new Date().toISOString().slice(0, -9);fse.parentNode.insertBefore(se, fse);
+      })(window, document, "script", "https://malong.webinargeek.com/malong.embed.js", "mw_wmvFJc4kBE6");
+      mw_wmvFJc4kBE6("init", {
+        project: "registration",
+        identifier: "897c274e-ef58-4fea-868d-f37e39d74c8b",
+        shape: "inline",
+        theme: "light",
+        disablePagination: true
+      });
+    </script>
   </div>
+
 </body>
 </html>
