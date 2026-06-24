@@ -17,6 +17,39 @@
     window.addEventListener('scroll', handleNavScroll, { passive: true });
   }
 
+  // --- Mobile hamburger nav ---
+  const navToggle = document.querySelector('.site-nav-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  if (navToggle && siteNav) {
+    function setMenuState(isOpen) {
+      siteNav.classList.toggle('is-open', isOpen);
+      document.body.classList.toggle('nav-open', isOpen);
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', isOpen ? 'Sluit menu' : 'Open menu');
+    }
+    navToggle.addEventListener('click', function () {
+      setMenuState(!siteNav.classList.contains('is-open'));
+    });
+    siteNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 980) setMenuState(false);
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (
+        window.innerWidth <= 980 &&
+        siteNav.classList.contains('is-open') &&
+        !siteNav.contains(e.target) &&
+        !navToggle.contains(e.target)
+      ) {
+        setMenuState(false);
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && siteNav.classList.contains('is-open')) setMenuState(false);
+    });
+  }
+
   // --- Reveal on scroll ---
   const revealElements = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver(
