@@ -23,7 +23,7 @@
   <title>De Longevity Masterclass — LONGEVITYFIT</title>
   <meta name="description" content="Meld je aan voor De Longevity Masterclass van LONGEVITYFIT." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,400&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -33,11 +33,12 @@
       color: #2a2520;
     }
 
-    /* ---- HERO FOTO: full width ---- */
+    /* ---- HERO FOTO: full width met overlay ---- */
     .hero {
       width: 100%;
       height: 280px;
       overflow: hidden;
+      position: relative;
     }
     .hero img {
       width: 100%;
@@ -45,6 +46,31 @@
       object-fit: cover;
       object-position: center center;
       display: block;
+    }
+    .hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 40px 24px 20px;
+      background: linear-gradient(to top, rgba(42,37,32,0.65) 0%, transparent 100%);
+      text-align: center;
+      color: #fff;
+    }
+    .hero-overlay .logo {
+      font-size: 16px;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      font-family: "Work Sans", sans-serif;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .hero-overlay .fit { color: #d4af37; font-weight: 600; }
+    .hero-overlay .tagline {
+      font-family: "Cormorant", "Playfair Display", serif;
+      font-style: italic;
+      font-size: 20px;
+      opacity: 0.92;
     }
 
 
@@ -71,6 +97,10 @@
 
   <div class="hero">
     <img src="images/masterclass/1.png" alt="Heidy &amp; Christina — LONGEVITYFIT" />
+    <div class="hero-overlay">
+      <span class="logo">LONGEVITY<span class="fit">FIT</span></span>
+      <span class="tagline">Welkom in de beste helft van je leven</span>
+    </div>
   </div>
 
   <div class="widget-wrap">
