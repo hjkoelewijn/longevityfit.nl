@@ -52,15 +52,41 @@
     }
     .logo .fit { color: #d4af37; font-weight: 600; }
 
+    .photo {
+      width: 100%;
+      max-width: 420px;
+      height: 260px;
+      overflow: hidden;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 75%;
+      display: block;
+    }
+
     .widget-wrap {
       width: 100%;
       max-width: 420px;
+    }
+
+    @media (min-width: 600px) {
+      .photo {
+        height: 320px;
+      }
     }
   </style>
 </head>
 <body>
 
   <a class="logo" href="index.html">LONGEVITY<span class="fit">FIT</span></a>
+
+  <div class="photo">
+    <img src="images/hero.jpg" alt="Heidy &amp; Christina — LONGEVITYFIT" />
+  </div>
 
   <div class="widget-wrap">
     <div id="mw_wmvFJc4kBE6_webinargeek"></div>
