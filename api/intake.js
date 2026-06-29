@@ -1,5 +1,3 @@
-import { createClient } from '@supabase/supabase-js';
-
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -14,41 +12,41 @@ export default async function handler(req, res) {
   }
 
   const {
-    voornaam,
-    achternaam,
-    email,
-    telefoon,
-    leeftijd,
-    startMoment,
-    uitdaging,
-    commitment,
+    voornaam, achternaam, email, telefoon,
+    leeftijd, startMoment, uitdaging, commitment,
   } = req.body;
 
   if (!voornaam || !email) {
     return res.status(400).json({ error: 'Verplichte velden ontbreken.' });
   }
 
-  const supabase = createClient(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_SERVICE_ROLE_KEY,
-    { auth: { autoRefreshToken: false, persistSession: false } }
-  );
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-  const { error } = await supabase.from('intake_gesprekken').insert({
-    voornaam,
-    achternaam,
-    email,
-    telefoon,
-    leeftijd,
-    start_moment: startMoment,
-    uitdaging,
-    commitment,
-    ingediend_op: new Date().toISOString(),
+  const response = await fetch(`${supabaseUrl}/rest/v1/intake_gesprekken`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'apikey': serviceRoleKey,
+      'Authorization': `Bearer ${serviceRoleKey}`,
+      'Prefer': 'return=minimal',
+    },
+    body: JSON.stringify({
+      voornaam,
+      achternaam,
+      email,
+      telefoon,
+      leeftijd,
+      start_moment: startMoment,
+      uitdaging,
+      commitment,
+    }),
   });
 
-  if (error) {
-    console.error('Supabase error:', error);
-    return res.status(500).json({ error: `Supabase: ${error.code} – ${error.message}` });
+  if (!response.ok) {
+    const text = await response.text();
+    console.error('Supabase fout:', response.status, text);
+    return res.status(500).json({ error: `Supabase ${response.status}: ${text}` });
   }
 
   return res.redirect(302, 'https://longevityfit.nl/bedankt-intake.html');
