@@ -49,5 +49,5 @@ module.exports = async function handler(req, res) {
     return res.status(500).json({ error: `Supabase ${response.status}: ${text}` });
   }
 
-  return res.redirect(302, 'https://longevityfit.nl/bedankt-intake.html');
+  return res.status(200).json({ ok: true });
 }
