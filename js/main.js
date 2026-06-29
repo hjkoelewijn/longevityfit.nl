@@ -164,7 +164,7 @@
 
       const data = new FormData(intakeForm);
 
-      fetch('https://formspree.io/f/VERVANG_MET_JOUW_ID', {
+      fetch('https://formspree.io/f/xvzjqaol', {
         method: 'POST',
         body: data,
         headers: { 'Accept': 'application/json' }
