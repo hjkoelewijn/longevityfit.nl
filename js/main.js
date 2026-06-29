@@ -146,18 +146,4 @@
     });
   }
 
-  // --- Intake formulier: validatie + Meta Pixel, submit gaat via Formspree action ---
-  const intakeForm = document.getElementById('intakeForm');
-  if (intakeForm) {
-    intakeForm.addEventListener('submit', function (e) {
-      if (!intakeForm.checkValidity()) {
-        e.preventDefault();
-        intakeForm.reportValidity();
-        return;
-      }
-      if (typeof fbq === 'function') {
-        fbq('track', 'Lead', { content_name: 'Intake gesprek' });
-      }
-    });
-  }
 })();
