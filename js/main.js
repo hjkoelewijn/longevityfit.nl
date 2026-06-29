@@ -166,24 +166,27 @@
 
       fetch('https://formspree.io/f/xvzjqaol', {
         method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
+        body: JSON.stringify(Object.fromEntries(data)),
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
       })
       .then(function (res) {
-        if (res.ok) {
-          if (typeof fbq === 'function') {
-            fbq('track', 'Lead', { content_name: 'Intake gesprek' });
+        return res.json().then(function (json) {
+          if (res.ok) {
+            if (typeof fbq === 'function') {
+              fbq('track', 'Lead', { content_name: 'Intake gesprek' });
+            }
+            intakeForm.style.display = 'none';
+            if (success) success.style.display = 'block';
+          } else {
+            if (submitBtn) submitBtn.disabled = false;
+            var msg = (json && json.error) ? json.error : 'Onbekende fout van Formspree.';
+            alert('Fout: ' + msg + '\n\nMail ons direct op info@longevityfit.nl');
           }
-          intakeForm.style.display = 'none';
-          if (success) success.style.display = 'block';
-        } else {
-          if (submitBtn) submitBtn.disabled = false;
-          alert('Er ging iets mis. Probeer het opnieuw of mail ons direct.');
-        }
+        });
       })
       .catch(function () {
         if (submitBtn) submitBtn.disabled = false;
-        alert('Er ging iets mis. Controleer je internetverbinding en probeer opnieuw.');
+        alert('Kan Formspree niet bereiken. Controleer je internetverbinding en probeer opnieuw.');
       });
     });
   }
