@@ -146,48 +146,18 @@
     });
   }
 
-  // --- Intake formulier: verstuur via Formspree en toon bevestiging ---
+  // --- Intake formulier: validatie + Meta Pixel, submit gaat via Formspree action ---
   const intakeForm = document.getElementById('intakeForm');
   if (intakeForm) {
-    const success = document.getElementById('intakeSuccess');
-    const submitBtn = intakeForm.querySelector('[type="submit"]');
-
     intakeForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
       if (!intakeForm.checkValidity()) {
+        e.preventDefault();
         intakeForm.reportValidity();
         return;
       }
-
-      if (submitBtn) submitBtn.disabled = true;
-
-      const data = new FormData(intakeForm);
-
-      fetch('https://formspree.io/f/xvzjqaol', {
-        method: 'POST',
-        body: JSON.stringify(Object.fromEntries(data)),
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
-      })
-      .then(function (res) {
-        return res.json().then(function (json) {
-          if (res.ok) {
-            if (typeof fbq === 'function') {
-              fbq('track', 'Lead', { content_name: 'Intake gesprek' });
-            }
-            intakeForm.style.display = 'none';
-            if (success) success.style.display = 'block';
-          } else {
-            if (submitBtn) submitBtn.disabled = false;
-            var msg = (json && json.error) ? json.error : 'Onbekende fout van Formspree.';
-            alert('Fout: ' + msg + '\n\nMail ons direct op info@longevityfit.nl');
-          }
-        });
-      })
-      .catch(function () {
-        if (submitBtn) submitBtn.disabled = false;
-        alert('Kan Formspree niet bereiken. Controleer je internetverbinding en probeer opnieuw.');
-      });
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', { content_name: 'Intake gesprek' });
+      }
     });
   }
 })();
