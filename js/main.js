@@ -146,34 +146,45 @@
     });
   }
 
-  // --- Intake formulier: toon succes en stuur door naar booking ---
+  // --- Intake formulier: verstuur via Formspree en toon bevestiging ---
   const intakeForm = document.getElementById('intakeForm');
   if (intakeForm) {
     const success = document.getElementById('intakeSuccess');
+    const submitBtn = intakeForm.querySelector('[type="submit"]');
+
     intakeForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      // Browser-native validatie respecteren
       if (!intakeForm.checkValidity()) {
         intakeForm.reportValidity();
         return;
       }
 
-      // Meta Pixel: registreer een Lead conversie bij geldige inzending
-      if (typeof fbq === 'function') {
-        fbq('track', 'Lead', { content_name: 'Intake gesprek' });
-      }
+      if (submitBtn) submitBtn.disabled = true;
 
-      if (success) {
-        success.style.display = 'block';
-      }
+      const data = new FormData(intakeForm);
 
-      const bookingUrl = intakeForm.getAttribute('data-booking-url') || '';
-      if (bookingUrl) {
-        setTimeout(function () {
-          window.location.href = bookingUrl;
-        }, 900);
-      }
+      fetch('https://formspree.io/f/VERVANG_MET_JOUW_ID', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function (res) {
+        if (res.ok) {
+          if (typeof fbq === 'function') {
+            fbq('track', 'Lead', { content_name: 'Intake gesprek' });
+          }
+          intakeForm.style.display = 'none';
+          if (success) success.style.display = 'block';
+        } else {
+          if (submitBtn) submitBtn.disabled = false;
+          alert('Er ging iets mis. Probeer het opnieuw of mail ons direct.');
+        }
+      })
+      .catch(function () {
+        if (submitBtn) submitBtn.disabled = false;
+        alert('Er ging iets mis. Controleer je internetverbinding en probeer opnieuw.');
+      });
     });
   }
 })();
