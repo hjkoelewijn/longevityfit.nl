@@ -30,7 +30,8 @@ export default async function handler(req, res) {
 
   const supabase = createClient(
     process.env.SUPABASE_URL,
-    process.env.SUPABASE_SERVICE_ROLE_KEY
+    process.env.SUPABASE_SERVICE_ROLE_KEY,
+    { auth: { autoRefreshToken: false, persistSession: false } }
   );
 
   const { error } = await supabase.from('intake_gesprekken').insert({
@@ -47,7 +48,7 @@ export default async function handler(req, res) {
 
   if (error) {
     console.error('Supabase error:', error);
-    return res.status(500).json({ error: 'Opslaan mislukt. Probeer het opnieuw.' });
+    return res.status(500).json({ error: `Supabase: ${error.code} – ${error.message}` });
   }
 
   return res.redirect(302, 'https://longevityfit.nl/bedankt-intake.html');
