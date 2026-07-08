@@ -14,7 +14,8 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1700027362124498');
-    fbq('track', 'PageView');
+    var _evId = (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : (Date.now().toString(36) + '-' + Math.random().toString(36).slice(2));
+    fbq('track', 'PageView', {}, {eventID: _evId});
   </script>
   <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1700027362124498&ev=PageView&noscript=1"
@@ -168,6 +169,8 @@
         submitBtn.textContent = 'Bezig met verzenden...';
         if (errorMsg) errorMsg.style.display = 'none';
 
+        const _leadEventId = (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : (Date.now().toString(36) + '-' + Math.random().toString(36).slice(2));
+
         const data = {
           voornaam:    form.voornaam.value.trim(),
           achternaam:  form.achternaam.value.trim(),
@@ -177,6 +180,7 @@
           startMoment: form.startmoment.value,
           uitdaging:   form.uitdaging.value.trim(),
           commitment:  form.investeren.value,
+          eventId:     _leadEventId,
         };
 
         try {
@@ -188,7 +192,7 @@
 
           if (res.ok || res.redirected) {
             if (typeof fbq === 'function') {
-              fbq('track', 'Lead', { content_name: 'Intake gesprek' });
+              fbq('track', 'Lead', { content_name: 'Intake gesprek' }, { eventID: _leadEventId });
             }
             window.location.href = 'https://longevityfit.nl/bedankt-intake.html';
           } else {

@@ -11,6 +11,7 @@ create table if not exists public.intake_gesprekken (
   start_moment   text,
   uitdaging      text,
   commitment     text,
+  event_id       text,
   ingediend_op   timestamptz not null default now()
 );
 

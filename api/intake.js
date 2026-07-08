@@ -14,6 +14,7 @@ module.exports = async function handler(req, res) {
   const {
     voornaam, achternaam, email, telefoon,
     leeftijd, startMoment, uitdaging, commitment,
+    eventId,
   } = req.body;
 
   if (!voornaam || !email) {
@@ -40,6 +41,7 @@ module.exports = async function handler(req, res) {
       start_moment: startMoment,
       uitdaging,
       commitment,
+      event_id: eventId || null,
     }),
   });
 

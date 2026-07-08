@@ -14,8 +14,10 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1700027362124498');
-    fbq('track', 'PageView');
-    fbq('track', 'Lead');
+    var _evId = (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : (Date.now().toString(36) + '-' + Math.random().toString(36).slice(2));
+    var _leadId = (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : (Date.now().toString(36) + '-' + Math.random().toString(36).slice(2));
+    fbq('track', 'PageView', {}, {eventID: _evId});
+    fbq('track', 'Lead', {}, {eventID: _leadId});
   </script>
   <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1700027362124498&ev=PageView&noscript=1"
