@@ -22,97 +22,199 @@
   /></noscript>
   <!-- End Meta Pixel Code -->
   <title>Ervaringen — LONGEVITYFIT</title>
-  <meta name="description" content="Wat deelnemers zeggen over het LONGEVITYFIT programma. Echte vrouwen, echte verandering." />
+  <meta name="description" content="Zij legden het fundament voor de beste helft van hun leven. De eerste groep aan het eind van fase 1." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;1,400&family=Playfair+Display:ital,wght@0,400;1,400&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/longevity-site.css" />
   <style>
-    /* ── Video testimonial grid ───────────────────────────── */
-    .ervaringen-video-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-      margin-top: 40px;
+    /* ── Paginabrede variabelen ──────────────────────── */
+    :root {
+      --off-white: #FAF7F2;
+      --charcoal:  #2A2520;
+      --gold:      #D4AF37;
+      --gold-dark: #C09D2F;
+      --muted:     rgba(42, 37, 32, 0.70);
     }
-    @media (min-width: 768px) {
-      .ervaringen-video-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+
+    /* ── Sectieafstand ──────────────────────────────── */
+    .erv-section {
+      padding: 96px 0;
+      background: var(--off-white);
     }
-    .ervaringen-video-item video {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 18px rgba(42,37,32,0.10);
-      display: block;
-      background: #2A2520;
+    @media (max-width: 767px) {
+      .erv-section { padding: 64px 0; }
     }
-    .ervaringen-video-item .video-name {
-      margin-top: 12px;
+
+    /* ── Eyebrow / sectiekoppen ─────────────────────── */
+    .erv-eyebrow {
       font-family: 'Work Sans', sans-serif;
       font-weight: 600;
-      font-size: 15px;
-      color: #2A2520;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 20px;
+      display: block;
     }
-    .ervaringen-video-item .video-quote {
-      margin-top: 4px;
+    .erv-section-kop {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin: 0 0 12px;
+    }
+    .erv-section-intro {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0 0 40px;
+    }
+    @media (max-width: 767px) {
+      .erv-section-kop  { font-size: 20px; }
+      .erv-section-intro { font-size: 16px; }
+    }
+
+    /* ── Video grid ─────────────────────────────────── */
+    .erv-video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    @media (max-width: 767px) {
+      .erv-video-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .erv-video-item video {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(42, 37, 32, 0.10);
+      display: block;
+      background: #1a1714;
+    }
+    .erv-video-quote {
       font-family: 'Cormorant', 'Playfair Display', serif;
       font-style: italic;
       font-size: 20px;
-      color: #78716c;
-      line-height: 1.4;
-    }
-
-    /* ── Geschreven testimonials ──────────────────────────── */
-    .ervaringen-written-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      margin-top: 32px;
+      line-height: 1.45;
+      color: var(--charcoal);
+      margin: 14px 0 0;
     }
     @media (min-width: 768px) {
-      .ervaringen-written-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .erv-video-quote { font-size: 22px; }
     }
-    .ervaringen-card {
-      background: #fffdf9;
-      border: 1px solid #e8dcc8;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(42,37,32,0.06);
-      padding: 28px;
+    .erv-video-naam {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 10px 0 0;
     }
-    .ervaringen-card .quote-mark {
-      font-family: 'Cormorant', serif;
-      font-size: 64px;
-      line-height: 1;
-      color: #D4AF37;
-      display: block;
-      margin-bottom: 4px;
+    .erv-video-context {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--muted);
+      margin: 4px 0 0;
     }
-    .ervaringen-card .fragment {
+
+    /* ── Geschreven quotes ──────────────────────────── */
+    .erv-quote-block {
+      max-width: 720px;
+      margin: 0 auto 56px;
+    }
+    .erv-quote-block:last-child { margin-bottom: 0; }
+    .erv-quote-line {
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 24px;
+    }
+    .erv-quote-text {
       font-family: 'Cormorant', 'Playfair Display', serif;
       font-style: italic;
       font-size: 22px;
       line-height: 1.55;
-      color: #2A2520;
+      color: var(--charcoal);
     }
-    .ervaringen-card .card-footer {
-      margin-top: 18px;
-      padding-top: 14px;
-      border-top: 1px solid #e8dcc8;
+    @media (min-width: 768px) {
+      .erv-quote-text { font-size: 28px; }
     }
-    .ervaringen-card .card-name {
+    .erv-quote-naam {
       font-family: 'Work Sans', sans-serif;
       font-weight: 600;
-      font-size: 15px;
-      color: #2A2520;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 20px 0 0;
     }
-    .ervaringen-card .card-context {
+    .erv-quote-context {
       font-family: 'Work Sans', sans-serif;
-      font-size: 13px;
-      color: #a8a29e;
-      margin-top: 2px;
+      font-size: 15px;
+      color: var(--muted);
+      margin: 4px 0 0;
+    }
+
+    /* ── Wat we zagen ───────────────────────────────── */
+    .erv-zagen-blok {
+      max-width: 720px;
+      margin: 0 auto 56px;
+    }
+    .erv-zagen-blok:last-child { margin-bottom: 0; }
+    .erv-zagen-kop {
+      font-family: 'Cormorant', 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 28px;
+      line-height: 1.25;
+      color: var(--charcoal);
+      margin: 0 0 12px;
+    }
+    .erv-zagen-body {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--charcoal);
+      margin: 0;
+    }
+    @media (max-width: 767px) {
+      .erv-zagen-kop  { font-size: 22px; }
+      .erv-zagen-body { font-size: 16px; }
+    }
+
+    /* ── CTA knop goud ──────────────────────────────── */
+    .btn--gold {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--charcoal);
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 8px;
+      padding: 16px 32px;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+      margin-top: 32px;
+    }
+    .btn--gold:hover { background: var(--gold-dark); }
+
+    /* ── Hero aanpassingen ──────────────────────────── */
+    .erv-hero-body {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--charcoal);
+      max-width: 620px;
+      margin: 20px 0 0;
+    }
+    @media (max-width: 767px) {
+      .erv-hero-body { font-size: 16px; }
     }
   </style>
 </head>
@@ -129,104 +231,82 @@
         <a href="index.html">Home</a>
         <a href="over-ons.html">Over ons</a>
         <a href="ervaringen.html" class="active">Ervaringen</a>
-        <a href="intake-gesprek.html">Intake gesprek</a>
-        <a href="intake-gesprek.html" class="btn btn--primary">Plan je intake gesprek</a>
+        <a href="intake-gesprek.html">Intakegesprek</a>
+        <a href="intake-gesprek.html" class="btn btn--primary">Plan je intakegesprek</a>
       </nav>
     </div>
   </header>
 
   <main>
 
-    <!-- ── Hero ── -->
+    <!-- ══════════════════════════════════════
+         SECTIE 1 — HERO
+    ══════════════════════════════════════ -->
     <section class="hero section section--gradient">
       <div class="container">
-        <p class="hero__kicker">Ervaringen</p>
-        <h1>Wat deelnemers zeggen</h1>
-        <p class="lead muted">Echte vrouwen. Echte verandering.</p>
+        <span class="erv-eyebrow">ERVARINGEN</span>
+        <h1>Zij legden het fundament voor de beste helft van hun leven.</h1>
+        <p class="erv-hero-body">Dit zijn de vrouwen uit de eerste groep, aan het eind van fase&nbsp;1. Ze vertellen zelf hoe die acht weken zijn gegaan.</p>
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════════════════════
-         VIDEO TESTIMONIALS
-         Voeg een nieuwe video toe door een <div class="ervaringen-video-item"> te kopiëren.
-         Zet het videobestand in de map images/ of gebruik een externe URL.
-    ═══════════════════════════════════════════════════════ -->
-    <section class="section">
+    <!-- ══════════════════════════════════════
+         SECTIE 2 — VIDEOTESTIMONIALS
+    ══════════════════════════════════════ -->
+    <section class="erv-section">
       <div class="container">
-        <h2>In hun eigen woorden</h2>
-
-        <div class="ervaringen-video-grid">
-
-          <!-- ── Tessa 1 ── -->
-          <div class="ervaringen-video-item">
-            <video src="images/videos/testimonial-tessa-1.mp4" controls preload="metadata">
-              Je browser ondersteunt geen video.
-            </video>
-            <p class="video-name">Tessa, 49 jaar</p>
-            <p class="video-quote">"Van uitgeblust naar energiek, flink afgevallen en zoveel minder piekeren."</p>
-          </div>
-
-          <!-- ── Tessa 2 ── -->
-          <div class="ervaringen-video-item">
-            <video src="images/videos/testimonial-tessa-2.mp4" controls preload="metadata">
-              Je browser ondersteunt geen video.
-            </video>
-            <p class="video-name">Tessa, 49 jaar</p>
-            <p class="video-quote">"Ik vind het nog steeds moeilijk, maar ik ben meer trouw aan mezelf en luister beter naar mijn lichaam."</p>
-          </div>
-
-          <!-- ── Kristel ── -->
-          <div class="ervaringen-video-item">
-            <video src="images/videos/testimonial-kristel-1.mp4" controls preload="metadata">
-              Je browser ondersteunt geen video.
-            </video>
-            <p class="video-name">Kristel, 46 jaar</p>
-            <p class="video-quote">"Meer energie, 3 à 4 kilo afgevallen en ontdekt dat ik echt liever voor mezelf mag zijn."</p>
-          </div>
-
-          <!-- ── Voeg hier meer video's toe (kopieer bovenstaand blok) ── -->
-
+        <p class="erv-section-kop">IN HUN EIGEN WOORDEN</p>
+        <p class="erv-section-intro">Opgenomen tijdens de coachcalls.</p>
+        <div class="erv-video-grid" id="videoGrid">
+          <!-- Ingevuld via JavaScript onderaan -->
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════════════════════
-         GESCHREVEN TESTIMONIALS
-         Voeg een nieuwe testimonial toe door een <div class="ervaringen-card"> te kopiëren.
-         Laat deze sectie weg (of houd hem leeg) totdat je content hebt.
-    ═══════════════════════════════════════════════════════ -->
-    <!--
-    <section class="section section--soft">
+    <!-- ══════════════════════════════════════
+         SECTIE 3 — GESCHREVEN QUOTES
+    ══════════════════════════════════════ -->
+    <section class="erv-section" style="background: #fff;" id="writtenSection">
       <div class="container">
-        <h2>Wat ze schrijven</h2>
-
-        <div class="ervaringen-written-grid">
-
-          <div class="ervaringen-card">
-            <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-            <p class="fragment">
-              Ik had nooit gedacht dat ik op mijn 47ste meer energie zou hebben dan op mijn 35ste.
-            </p>
-            <div class="card-footer">
-              <p class="card-name">Miriam, 47</p>
-              <p class="card-context">Uit de coach call van week 4</p>
-            </div>
-          </div>
-
+        <p class="erv-section-kop">UIT DE COACHCALLS</p>
+        <div id="writtenContainer">
+          <!-- Ingevuld via JavaScript onderaan -->
         </div>
       </div>
     </section>
-    -->
 
-    <!-- ── CTA ── -->
-    <section class="section section--compact">
-      <div class="container" style="text-align: center;">
-        <h2>Wil je weten of dit programma bij je past?</h2>
-        <p class="lead muted">Plan een vrijblijvend intakegesprek en ontdek wat LONGEVITYFIT voor jou kan doen.</p>
-        <div class="hero__actions">
-          <a href="intake-gesprek.html" class="btn btn--primary">Plan je intake gesprek</a>
-          <a href="index.html" class="btn btn--outline">Terug naar home</a>
+    <!-- ══════════════════════════════════════
+         SECTIE 4 — WAT WE ZAGEN GEBEUREN
+    ══════════════════════════════════════ -->
+    <section class="erv-section">
+      <div class="container">
+        <p class="erv-section-kop">WAT WE ZAGEN GEBEUREN</p>
+
+        <div class="erv-zagen-blok">
+          <h2 class="erv-zagen-kop">Het gaat bijna nooit over eten.</h2>
+          <p class="erv-zagen-body">Iedereen begint met een vraag over voeding of training, en die vraag is ook terecht, maar na een week of twee zit je met elkaar in een heel ander gesprek. Over waarom je jezelf steeds als laatste inplant, en wat je dat de afgelopen jaren gekost heeft.</p>
         </div>
+
+        <div class="erv-zagen-blok">
+          <h2 class="erv-zagen-kop">"In de basis doe ik al veel goed."</h2>
+          <p class="erv-zagen-body">Dat horen we in bijna elk intakegesprek, en meestal is het ook nog waar. Alleen heeft nog nooit iemand met je meegekeken naar wat er onder die basis zit, op celniveau en in je hoofd.</p>
+        </div>
+
+        <div class="erv-zagen-blok">
+          <h2 class="erv-zagen-kop">Motivatie was het probleem niet.</h2>
+          <p class="erv-zagen-body">Deze vrouwen deden al veel, vaak te veel. Wat ze nodig hadden was richting, en iemand die je laat zien welke patronen je in de weg zitten om de beste helft van je leven ook echt te gaan leven.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SECTIE 5 — CTA
+    ══════════════════════════════════════ -->
+    <section class="erv-section" style="background: #fff;">
+      <div class="container" style="max-width: 720px; text-align: center;">
+        <h2 style="font-family: 'Cormorant', 'Playfair Display', serif; font-style: italic; font-size: clamp(40px, 5vw, 52px); color: var(--charcoal); margin: 0;">En jij?</h2>
+        <p class="erv-zagen-body" style="margin-top: 24px; text-align: center;">Elke vrouw hierboven is begonnen met één gesprek van dertig minuten. Daarin kijken we waar je nu staat en wat je wilt, en zeggen we je eerlijk wat daar voor nodig is. Ook als dat betekent dat dit traject nu niet de juiste stap voor je is.</p>
+        <a href="intake-gesprek.html" class="btn--gold">PLAN JE INTAKEGESPREK</a>
       </div>
     </section>
 
@@ -237,7 +317,7 @@
       <a href="index.html" class="logo">LONGEVITY<span class="fit">FIT</span></a>
       <nav class="site-footer__links" aria-label="Footer">
         <a href="index.html">Home</a>
-        <a href="intake-gesprek.html">Intake gesprek</a>
+        <a href="intake-gesprek.html">Intakegesprek</a>
         <a href="algemene-voorwaarden.html">Algemene voorwaarden</a>
         <a href="privacy-policy.html">Privacy policy</a>
       </nav>
@@ -245,5 +325,86 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // ═══════════════════════════════════════════════════════════════
+    //  DATA — voeg hier nieuwe testimonials toe
+    //  Volgorde van videoTestimonials is bewust; sorteer niet.
+    // ═══════════════════════════════════════════════════════════════
+
+    var videoTestimonials = [
+      {
+        naam:    "Tessa",
+        quote:   "Van uitgeblust naar energiek, flink afgevallen en zoveel minder piekeren.",
+        context: "Tessa meldde zich aan met vermoeidheid als enige klacht.",
+        bestand: "/videos/tessa-1.mp4",
+        poster:  "/videos/tessa-1.jpg"
+      },
+      {
+        naam:    "Kristel",
+        quote:   "Meer energie, drie à vier kilo afgevallen, en ik heb ontdekt dat ik echt liever voor mezelf mag zijn.",
+        context: "Kristel zat middenin een groot werktraject toen ze begon.",
+        bestand: "/videos/kristel-1.mp4",
+        poster:  "/videos/kristel-1.jpg"
+      },
+      {
+        naam:    "Tessa",
+        quote:   "Ik vind het nog steeds moeilijk, maar ik ben trouwer aan mezelf en ik luister beter naar mijn lichaam.",
+        context: "Tessa nog een keer, over het stuk dat niet vanzelf ging.",
+        bestand: "/videos/tessa-2.mp4",
+        poster:  "/videos/tessa-2.jpg"
+      }
+    ];
+
+    var writtenTestimonials = [
+      {
+        naam:    "D.",
+        quote:   "Ik dacht eerst nog acht weken, eigenlijk vond ik dat niet lang, maar het is echt wel een heel groot verschil. Ik heb enorm veel minder stress. Echt heel bizar. Ik ben vier kilo afgevallen.",
+        context: "Afvallen stond niet op haar lijst toen ze begon."
+      }
+    ];
+
+    // ═══════════════════════════════════════════════════════════════
+    //  RENDER — pas hieronder niets aan
+    // ═══════════════════════════════════════════════════════════════
+
+    function renderVideos() {
+      var grid = document.getElementById('videoGrid');
+      if (!grid) return;
+      grid.innerHTML = videoTestimonials.map(function(v) {
+        var posterAttr = v.poster ? ' poster="' + v.poster + '"' : '';
+        return '<div class="erv-video-item">'
+          + '<video src="' + v.bestand + '"' + posterAttr + ' controls preload="metadata">'
+          +   'Je browser ondersteunt geen video.'
+          + '</video>'
+          + '<p class="erv-video-quote">\u201c' + v.quote + '\u201d</p>'
+          + '<p class="erv-video-naam">' + v.naam + '</p>'
+          + '<p class="erv-video-context">' + v.context + '</p>'
+          + '</div>';
+      }).join('');
+    }
+
+    function renderWritten() {
+      var container = document.getElementById('writtenContainer');
+      var section   = document.getElementById('writtenSection');
+      if (!container) return;
+      if (!writtenTestimonials.length) {
+        if (section) section.style.display = 'none';
+        return;
+      }
+      container.innerHTML = writtenTestimonials.map(function(w) {
+        return '<div class="erv-quote-block">'
+          + '<div class="erv-quote-line" aria-hidden="true"></div>'
+          + '<p class="erv-quote-text">\u201c' + w.quote + '\u201d</p>'
+          + '<p class="erv-quote-naam">' + w.naam + '</p>'
+          + '<p class="erv-quote-context">' + w.context + '</p>'
+          + '</div>';
+      }).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      renderVideos();
+      renderWritten();
+    });
+  </script>
 </body>
 </html>
