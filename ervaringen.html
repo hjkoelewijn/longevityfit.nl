@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1700027362124498');
+    var _evId = (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : (Date.now().toString(36) + '-' + Math.random().toString(36).slice(2));
+    fbq('track', 'PageView', {}, {eventID: _evId});
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1700027362124498&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+  <title>Ervaringen — LONGEVITYFIT</title>
+  <meta name="description" content="Wat deelnemers zeggen over het LONGEVITYFIT programma. Echte vrouwen, echte verandering." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;1,400&family=Playfair+Display:ital,wght@0,400;1,400&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/longevity-site.css" />
+  <style>
+    /* ── Video testimonial grid ───────────────────────────── */
+    .ervaringen-video-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    @media (min-width: 768px) {
+      .ervaringen-video-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .ervaringen-video-item video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 18px rgba(42,37,32,0.10);
+      display: block;
+      background: #2A2520;
+    }
+    .ervaringen-video-item .video-name {
+      margin-top: 12px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: #2A2520;
+    }
+    .ervaringen-video-item .video-quote {
+      margin-top: 4px;
+      font-family: 'Cormorant', 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: #78716c;
+      line-height: 1.4;
+    }
+
+    /* ── Geschreven testimonials ──────────────────────────── */
+    .ervaringen-written-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    @media (min-width: 768px) {
+      .ervaringen-written-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .ervaringen-card {
+      background: #fffdf9;
+      border: 1px solid #e8dcc8;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(42,37,32,0.06);
+      padding: 28px;
+    }
+    .ervaringen-card .quote-mark {
+      font-family: 'Cormorant', serif;
+      font-size: 64px;
+      line-height: 1;
+      color: #D4AF37;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .ervaringen-card .fragment {
+      font-family: 'Cormorant', 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 22px;
+      line-height: 1.55;
+      color: #2A2520;
+    }
+    .ervaringen-card .card-footer {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid #e8dcc8;
+    }
+    .ervaringen-card .card-name {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: #2A2520;
+    }
+    .ervaringen-card .card-context {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 13px;
+      color: #a8a29e;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">LONGEVITY<span class="fit">FIT</span></a>
+      <button class="site-nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Hoofdmenu">
+        <a href="index.html">Home</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="ervaringen.html" class="active">Ervaringen</a>
+        <a href="intake-gesprek.html">Intake gesprek</a>
+        <a href="intake-gesprek.html" class="btn btn--primary">Plan je intake gesprek</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="hero section section--gradient">
+      <div class="container">
+        <p class="hero__kicker">Ervaringen</p>
+        <h1>Wat deelnemers zeggen</h1>
+        <p class="lead muted">Echte vrouwen. Echte verandering.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         VIDEO TESTIMONIALS
+         Voeg een nieuwe video toe door een <div class="ervaringen-video-item"> te kopiëren.
+         Zet het videobestand in de map images/ of gebruik een externe URL.
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section">
+      <div class="container">
+        <h2>In hun eigen woorden</h2>
+        <p class="lead muted">Bekijk wat deelnemers vertellen over hun ervaring.</p>
+
+        <div class="ervaringen-video-grid">
+
+          <!-- ── Video 1 — vervang src, naam en quote ── -->
+          <div class="ervaringen-video-item">
+            <video src="images/videos/testimonial-1.mp4" controls preload="metadata">
+              Je browser ondersteunt geen video.
+            </video>
+            <p class="video-name">Deelnemer 1</p>
+            <p class="video-quote">Hier komt de quote.</p>
+          </div>
+
+          <!-- ── Video 2 — vervang src, naam en quote ── -->
+          <div class="ervaringen-video-item">
+            <video src="images/videos/testimonial-2.mp4" controls preload="metadata">
+              Je browser ondersteunt geen video.
+            </video>
+            <p class="video-name">Deelnemer 2</p>
+            <p class="video-quote">Hier komt de quote.</p>
+          </div>
+
+          <!-- ── Voeg hier meer video's toe (kopieer bovenstaand blok) ── -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         GESCHREVEN TESTIMONIALS
+         Voeg een nieuwe testimonial toe door een <div class="ervaringen-card"> te kopiëren.
+         Laat deze sectie weg (of houd hem leeg) totdat je content hebt.
+    ═══════════════════════════════════════════════════════ -->
+    <!--
+    <section class="section section--soft">
+      <div class="container">
+        <h2>Wat ze schrijven</h2>
+
+        <div class="ervaringen-written-grid">
+
+          <div class="ervaringen-card">
+            <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+            <p class="fragment">
+              Ik had nooit gedacht dat ik op mijn 47ste meer energie zou hebben dan op mijn 35ste.
+            </p>
+            <div class="card-footer">
+              <p class="card-name">Miriam, 47</p>
+              <p class="card-context">Uit de coach call van week 4</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- ── CTA ── -->
+    <section class="section section--compact">
+      <div class="container" style="text-align: center;">
+        <h2>Wil je weten of dit programma bij je past?</h2>
+        <p class="lead muted">Plan een vrijblijvend intakegesprek en ontdek wat LONGEVITYFIT voor jou kan doen.</p>
+        <div class="hero__actions">
+          <a href="intake-gesprek.html" class="btn btn--primary">Plan je intake gesprek</a>
+          <a href="index.html" class="btn btn--outline">Terug naar home</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <a href="index.html" class="logo">LONGEVITY<span class="fit">FIT</span></a>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="intake-gesprek.html">Intake gesprek</a>
+        <a href="algemene-voorwaarden.html">Algemene voorwaarden</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
