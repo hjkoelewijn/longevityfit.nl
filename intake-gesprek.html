@@ -21,12 +21,205 @@
     src="https://www.facebook.com/tr?id=1700027362124498&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
-  <title>Intakegesprek - LONGEVITYFIT</title>
-  <meta name="description" content="Plan je Longevity Fit intake gesprek. We kwalificeren of het 8-weekse Reset programma past bij jouw doelen en commitment." />
+  <title>Intakegesprek — LONGEVITYFIT</title>
+  <meta name="description" content="Plan je intakegesprek. Dertig minuten, en je weet waar je staat. Je spreekt Heidy en/of Christina." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;1,400&family=Playfair+Display:ital,wght@0,400;1,400&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/longevity-site.css" />
+  <style>
+    /* ── Variabelen ─────────────────────────────────── */
+    :root {
+      --off-white: #FAF7F2;
+      --charcoal:  #2A2520;
+      --gold:      #D4AF37;
+      --gold-dark: #C09D2F;
+      --muted:     rgba(42, 37, 32, 0.70);
+    }
+
+    /* ── Sectieafstand ──────────────────────────────── */
+    .int-section {
+      padding: 96px 0;
+      background: var(--off-white);
+    }
+    .int-section--white {
+      padding: 96px 0;
+      background: #fff;
+    }
+    @media (max-width: 767px) {
+      .int-section,
+      .int-section--white { padding: 64px 0; }
+    }
+
+    /* ── Eyebrow / sectiekoppen ─────────────────────── */
+    .int-eyebrow {
+      display: block;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 20px;
+    }
+    .int-section-kop {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin: 0 0 16px;
+    }
+    @media (max-width: 767px) {
+      .int-section-kop { font-size: 20px; }
+    }
+
+    /* ── Body tekst ─────────────────────────────────── */
+    .int-body {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--charcoal);
+      margin: 0 0 20px;
+    }
+    .int-body:last-child { margin-bottom: 0; }
+    .int-intro {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0 0 32px;
+    }
+    @media (max-width: 767px) {
+      .int-body,
+      .int-intro { font-size: 16px; }
+    }
+
+    /* ── Hero body ──────────────────────────────────── */
+    .int-hero-body {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--charcoal);
+      max-width: 600px;
+      margin: 20px 0 36px;
+    }
+    @media (max-width: 767px) {
+      .int-hero-body { font-size: 16px; }
+    }
+
+    /* ── Gouden knop ────────────────────────────────── */
+    .btn--gold {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--charcoal);
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 8px;
+      padding: 16px 32px;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+    .btn--gold:hover { background: var(--gold-dark); }
+
+    /* ── Bullets ────────────────────────────────────── */
+    .int-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .int-bullets li {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--charcoal);
+      padding-left: 28px;
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .int-bullets li:last-child { margin-bottom: 0; }
+    .int-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--gold);
+      font-size: 24px;
+      line-height: 1.2;
+    }
+    @media (max-width: 767px) {
+      .int-bullets li { font-size: 16px; }
+    }
+
+    /* ── Stappen ────────────────────────────────────── */
+    .int-stappen {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .int-stap {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    .int-stap:last-child { margin-bottom: 0; }
+    .int-stap-nr {
+      font-family: 'Cormorant', 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 28px;
+      color: var(--gold);
+      flex-shrink: 0;
+      width: 24px;
+      text-align: center;
+    }
+    .int-stap-tekst {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--charcoal);
+    }
+    @media (max-width: 767px) {
+      .int-stap-tekst { font-size: 16px; }
+    }
+
+    /* ── Social proof blok ──────────────────────────── */
+    .int-social-proof {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--charcoal);
+    }
+    .int-social-proof a {
+      color: var(--charcoal);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+    }
+    .int-social-proof a:hover { color: var(--gold); }
+    @media (max-width: 767px) {
+      .int-social-proof { font-size: 16px; }
+    }
+
+    /* ── Formulier-intro ────────────────────────────── */
+    .int-form-intro {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 12px 0 32px;
+    }
+    @media (max-width: 767px) {
+      .int-form-intro { font-size: 16px; }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -42,42 +235,91 @@
         <a href="over-ons.html">Over ons</a>
         <a href="ervaringen.html">Ervaringen</a>
         <a href="intake-gesprek.html" class="active">Intakegesprek</a>
-        <a href="#form" class="btn btn--primary">Plan je intake gesprek</a>
+        <a href="#form" class="btn btn--primary">Plan je intakegesprek</a>
       </nav>
     </div>
   </header>
 
   <main>
+
+    <!-- ══════════════════════════════════════
+         SECTIE 1 — HERO
+    ══════════════════════════════════════ -->
     <section class="hero section section--gradient">
       <div class="container">
-        <p class="hero__kicker">Intakegesprek</p>
-        <h1>Dit is geen gratis coachingsessie, maar een kwalificatiegesprek</h1>
-        <p class="lead muted">In dit gesprek bepalen we of jouw doelen, timing en commitment aansluiten op het 8-weekse Reset programma.</p>
+        <span class="int-eyebrow">INTAKEGESPREK</span>
+        <h1>Dertig minuten, en je weet waar je staat.</h1>
+        <p class="int-hero-body">Je spreekt Heidy en/of Christina. We kijken samen naar waar je nu staat, wat je werkelijk wilt en wat er nodig is om daar te komen.</p>
+        <a href="#form" class="btn--gold">PLAN JE INTAKEGESPREK</a>
       </div>
     </section>
 
-    <section class="section section--compact">
-      <div class="container grid-3">
-        <article class="card">
-          <h3>Wat gebeurt er?</h3>
-          <p>We maken je startsituatie scherp en kijken waar je nu energie verliest.</p>
-        </article>
-        <article class="card">
-          <h3>Voor wie?</h3>
-          <p>Voor 40+ vrouwen die verantwoordelijkheid nemen en bereid zijn om te investeren in verandering.</p>
-        </article>
-        <article class="card">
-          <h3>Wat verwacht je?</h3>
-          <p>Een direct gesprek van ongeveer 30 minuten met heldere vervolgstap als er een match is.</p>
-        </article>
+    <!-- ══════════════════════════════════════
+         SECTIE 2 — WAT JE ERUIT HAALT
+    ══════════════════════════════════════ -->
+    <section class="int-section">
+      <div class="container" style="max-width: 720px;">
+        <p class="int-section-kop">WAT JE ERUIT HAALT</p>
+        <p class="int-intro">Ook als je daarna niet met ons verder gaat, loop je uit dit gesprek met drie dingen weg.</p>
+        <ul class="int-bullets">
+          <li>Een concreet beeld van wat er voor jou te winnen valt in de komende maanden, in plaats van een vaag gevoel dat het beter kan.</li>
+          <li>Een eerlijk antwoord op de vraag of dit traject de juiste stap voor je is, en de juiste timing.</li>
+          <li>Een gesprek waarin we doorvragen, ook als het even ongemakkelijk wordt. Daar zit de waarde.</li>
+        </ul>
       </div>
     </section>
 
-    <section class="section" id="form">
+    <!-- ══════════════════════════════════════
+         SECTIE 3 — HOE HET GAAT
+    ══════════════════════════════════════ -->
+    <section class="int-section--white">
+      <div class="container" style="max-width: 720px;">
+        <p class="int-section-kop">HOE HET GAAT</p>
+        <ol class="int-stappen">
+          <li class="int-stap">
+            <span class="int-stap-nr">1</span>
+            <span class="int-stap-tekst">Je vult het formulier in en kiest direct een moment dat je uitkomt.</span>
+          </li>
+          <li class="int-stap">
+            <span class="int-stap-nr">2</span>
+            <span class="int-stap-tekst">We spreken elkaar via videobellen, ongeveer dertig minuten.</span>
+          </li>
+          <li class="int-stap">
+            <span class="int-stap-nr">3</span>
+            <span class="int-stap-tekst">Je weet waar je aan toe bent. Als het klopt, vertellen we precies hoe het traject eruitziet en wanneer de eerstvolgende groep start.</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SECTIE 4 — VOOR WIE
+    ══════════════════════════════════════ -->
+    <section class="int-section">
+      <div class="container" style="max-width: 720px;">
+        <p class="int-section-kop">VOOR WIE DIT GESPREK IS</p>
+        <p class="int-body">We werken met 40+ vrouwen die veel doen en merken dat het niet meer oplevert wat het zou moeten. Vrouwen met een drukke baan, een eigen bedrijf en/of een druk leven. Sommigen weten precies wat ze willen veranderen, anderen voelen vooral dat er iets anders moet maar weten nog niet wat. Allebei is prima, daarvoor is dit gesprek.</p>
+        <p class="int-body">Wat wij vragen is de bereidheid om te veranderen wat je al jaren doet, en om acht weken lang tijd en geld in jezelf te steken.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SECTIE 5 — SOCIAL PROOF
+    ══════════════════════════════════════ -->
+    <section class="int-section--white">
+      <div class="container">
+        <p class="int-social-proof">Vrouwen die het traject hebben gedaan vertellen zelf hoe hun acht weken zijn gegaan. <a href="ervaringen.html">Lees hun ervaringen.</a></p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SECTIE 6 — FORMULIER
+    ══════════════════════════════════════ -->
+    <section class="int-section" id="form">
       <div class="container">
         <div class="form-wrap">
-          <h2>Vul je intake in</h2>
-          <p class="helper">Vul het formulier in en we nemen zo snel mogelijk contact met je op om een afspraakmoment te plannen.</p>
+          <h2 style="font-family: 'Cormorant', 'Playfair Display', serif; font-style: italic; font-size: clamp(36px, 4vw, 52px); color: var(--charcoal); margin: 0;">Vul je intake in</h2>
+          <p class="int-form-intro">Na het verzenden kies je direct een moment in de agenda. Wij bereiden ons voor op basis van wat je invult, zodat we in dat halfuur niet bij nul hoeven te beginnen.</p>
 
           <form id="intakeForm" novalidate>
             <div class="form-grid">
@@ -141,6 +383,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
@@ -148,7 +391,7 @@
       <a href="index.html" class="logo">LONGEVITY<span class="fit">FIT</span></a>
       <nav class="site-footer__links" aria-label="Footer">
         <a href="index.html">Home</a>
-        <a href="over-ons.html">Over ons</a>
+        <a href="intake-gesprek.html">Intakegesprek</a>
         <a href="algemene-voorwaarden.html">Algemene voorwaarden</a>
         <a href="privacy-policy.html">Privacy policy</a>
       </nav>
