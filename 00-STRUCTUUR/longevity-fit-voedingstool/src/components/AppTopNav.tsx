@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { href: "/inspiratie", label: "Inspiratie" },
   { href: "/richtlijnen", label: "Richtlijnen" },
   { href: "/kennisbank", label: "Kennisbank" },
+  { href: "/ervaringen", label: "Ervaringen" },
   { href: "/over#visie", label: "Over" },
   { href: "/profile", label: "Profiel" },
 ];
